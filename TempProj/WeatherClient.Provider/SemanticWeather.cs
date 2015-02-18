@@ -142,7 +142,18 @@ namespace WeatherClient.Provider
 
         private SemanticWeatherEnum SemanticClearSky()
         {
-            throw new NotImplementedException();
+            if (_weather.FeelsLikeTemperature < 5)
+                return SemanticWeatherEnum.Clear_VeryCold;
+            if (_weather.FeelsLikeTemperature < 15)
+                return SemanticWeatherEnum.Clear_Cold;
+            if (_weather.FeelsLikeTemperature > 45)
+                return SemanticWeatherEnum.Clear_VeryHot;
+            if (_weather.FeelsLikeTemperature > 30)
+                return SemanticWeatherEnum.Clear_Hot;
+            if (_weather.FeelsLikeTemperature > 20)
+                return SemanticWeatherEnum.Clear_Nice;
+            
+            return SemanticWeatherEnum.Clear_NotBad;
         }
 
         private SemanticWeatherEnum SemanticAtmosphereMist()
