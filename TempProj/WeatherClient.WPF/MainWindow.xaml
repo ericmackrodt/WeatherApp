@@ -13,6 +13,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -31,7 +32,7 @@
         </StackPanel>
         
         <Image Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
-               Source="{Binding IconType, Converter={StaticResource IconConverter}}"/>
+               Source="{Binding Weather, Converter={StaticResource IconConverter}}"/>
         
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -51,6 +52,21 @@
                 <TextBlock Text="Wind Speed" HorizontalAlignment="Center" />
                 <TextBlock Text="{Binding WindSpeed}" HorizontalAlignment="Center" />
             </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>    
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Sunrise: " />
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding Sunrise}" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Sunset: " />
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding Sunset}" />
         </Grid>
     </Grid>
 </Window>

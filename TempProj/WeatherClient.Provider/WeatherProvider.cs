@@ -34,12 +34,6 @@ namespace WeatherClient.Provider
             return new WeatherData(data, unit);
         }
 
-        public double GetApparentTemperature(WeatherData data)
-        {
-            var calculator = new ApparentTemperatureCalculator(data, SpeedUnit.Ms);
-            return calculator.GetFeelsLike();
-        }
-
         public SemanticWeatherEnum GetSemanticWeatherEnum(WeatherData data)
         {
             throw new NotImplementedException();

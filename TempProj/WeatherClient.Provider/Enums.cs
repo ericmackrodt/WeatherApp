@@ -21,26 +21,23 @@ namespace WeatherClient.Provider
         Fahrenheit = 1
     }
 
+    public enum TimeOfDay
+    {
+        Day,
+        Night
+    }
+
     public enum WeatherIconType
     {
-        Day_ClearSky,
-        Day_FewClouds,
-        Day_ScatteredClouds,
-        Day_BrokenClouds,
-        Day_ShowerRain,
-        Day_Rain,
-        Day_Thunderstorm,
-        Day_Snow,
-        Day_Mist,
-        Night_ClearSky,
-        Night_FewClouds,
-        Night_ScatteredClouds,
-        Night_BrokenClouds,
-        Night_ShowerRain,
-        Night_Rain,
-        Night_Thunderstorm,
-        Night_Snow,
-        Night_Mist,
+        ClearSky,
+        FewClouds,
+        ScatteredClouds,
+        BrokenClouds,
+        ShowerRain,
+        Rain,
+        Thunderstorm,
+        Snow,
+        Mist,
         None
     }
 }

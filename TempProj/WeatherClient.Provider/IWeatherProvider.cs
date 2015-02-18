@@ -11,7 +11,6 @@ namespace WeatherClient.Provider
         Task<WeatherData> GetCurrentWeather(string locationQuery, TemperatureUnit unit);
         Task<WeatherData> GetCurrentWeather(double latitude, double longitude, TemperatureUnit unit);
         Task<WeatherData> GetCurrentWeather(int locationId, TemperatureUnit unit);
-        double GetApparentTemperature(WeatherData data);
         SemanticWeatherEnum GetSemanticWeatherEnum(WeatherData data);
     }
 }

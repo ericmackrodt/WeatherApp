@@ -91,6 +91,39 @@ namespace WeatherClient.WPF.ViewModels
             }
         }
 
+        private string _sunset;
+        public string Sunset
+        {
+            get { return _sunset; }
+            set
+            {
+                _sunset = value;
+                NotifyChanged();
+            }
+        }
+
+        private string _sunrsie;
+        public string Sunrise
+        {
+            get { return _sunrsie; }
+            set
+            {
+                _sunrsie = value;
+                NotifyChanged();
+            }
+        }
+
+        private WeatherData _weather;
+        public WeatherData Weather
+        {
+            get { return _weather; }
+            set
+            {
+                _weather = value;
+                NotifyChanged();
+            }
+        }
+
         private ICommand _getWeatherCommand;        
         public ICommand GetWeatherCommand
         {
@@ -108,11 +141,14 @@ namespace WeatherClient.WPF.ViewModels
         {
             var weather = await _provider.GetCurrentWeather(_weatherLocation, TemperatureUnit.Celsius);
             Temperature = Math.Round(weather.Temperature, 1);
-            ApparentTemperature = _provider.GetApparentTemperature(weather);
+            ApparentTemperature = Math.Round(weather.FeelsLikeTemperature, 1);
             WeatherCondition = weather.WeatherID.ToString();
             Humidity = weather.Humidity;
             WindSpeed = weather.WindSpeed;
             IconType = weather.IconType;
+            Sunset = weather.Sunset.ToString("dd/MM/yyyy HH:mm:ss");
+            Sunrise = weather.Sunrise.ToString("dd/MM/yyyy HH:mm:ss");
+            Weather = weather;
         }
 
         public override async Task LoadData(object arg)

@@ -20,23 +20,23 @@ namespace WeatherClient.Provider.Helpers
                 switch (code)
                 {
                     case 1:
-                        return day ? WeatherIconType.Day_ClearSky : WeatherIconType.Night_ClearSky;
+                        return WeatherIconType.ClearSky;
                     case 2:
-                        return day ? WeatherIconType.Day_FewClouds : WeatherIconType.Night_FewClouds;
+                        return WeatherIconType.FewClouds;
                     case 3:
-                        return day ? WeatherIconType.Day_ScatteredClouds : WeatherIconType.Night_ScatteredClouds;
+                        return WeatherIconType.ScatteredClouds;
                     case 4:
-                        return day ? WeatherIconType.Day_BrokenClouds : WeatherIconType.Day_BrokenClouds;
+                        return WeatherIconType.BrokenClouds;
                     case 9:
-                        return day ? WeatherIconType.Day_ShowerRain : WeatherIconType.Night_ShowerRain;
+                        return WeatherIconType.ShowerRain;
                     case 10:
-                        return day ? WeatherIconType.Day_Rain : WeatherIconType.Night_Rain;
+                        return WeatherIconType.Rain;
                     case 11:
-                        return day ? WeatherIconType.Day_Thunderstorm : WeatherIconType.Night_Thunderstorm;
+                        return WeatherIconType.Thunderstorm;
                     case 13:
-                        return day ? WeatherIconType.Day_Snow : WeatherIconType.Night_Snow;
+                        return WeatherIconType.Snow;
                     case 50:
-                        return day ? WeatherIconType.Day_Mist : WeatherIconType.Night_Mist;
+                        return WeatherIconType.Mist;
                     default:
                         return WeatherIconType.None;
                 }

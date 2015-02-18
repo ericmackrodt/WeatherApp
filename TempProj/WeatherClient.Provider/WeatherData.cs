@@ -9,6 +9,8 @@ namespace WeatherClient.Provider
 {
     public class WeatherData
     {
+        private ApparentTemperatureCalculator _apparentTemperatureCalc;
+
         public string CityID { get; set; }
 
         public string CityName { get; set; }
@@ -43,9 +45,30 @@ namespace WeatherClient.Provider
 
         public TemperatureUnit TemperatureUnit { get; set; }
 
-        public WeatherData() { }
+        public TimeOfDay TimeOfDay
+        {
+            get
+            {
+                var now = DateTime.Now;
+                return now >= Sunrise && now < Sunset ? TimeOfDay.Day : TimeOfDay.Night;
+            }
+        }
+
+        public double FeelsLikeTemperature
+        {
+            get
+            {
+                return _apparentTemperatureCalc.GetFeelsLike();
+            }
+        }
+
+        public WeatherData()
+        {
+            _apparentTemperatureCalc = new ApparentTemperatureCalculator(this, SpeedUnit.Ms);
+        }
 
         public WeatherData(CurrentWeatherData data, TemperatureUnit unit)
+            : this()
         {
             TemperatureUnit = unit;
             CityID = data.Id;
@@ -80,7 +103,5 @@ namespace WeatherClient.Provider
                 WindSpeed = wind.Speed;
             }
         }
-
-
     }
 }
