@@ -29,6 +29,8 @@
             <TextBlock Text="{Binding Temperature}" FontSize="20" />
             <TextBlock Text="°C " FontSize="20" />
             <TextBlock Text="{Binding WeatherCondition}" VerticalAlignment="Bottom" />
+            <TextBlock Text=" - " VerticalAlignment="Bottom" />
+            <TextBlock Text="{Binding SemanticCondition}" VerticalAlignment="Bottom" />
         </StackPanel>
         
         <Image Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"

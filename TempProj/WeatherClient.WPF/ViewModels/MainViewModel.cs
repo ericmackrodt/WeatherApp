@@ -124,6 +124,18 @@ namespace WeatherClient.WPF.ViewModels
             }
         }
 
+        private string _semanticCondition;
+        public string SemanticCondition
+        {
+            get { return _semanticCondition; }
+            set
+            {
+                _semanticCondition = value;
+                NotifyChanged();
+            }
+        }
+
+
         private ICommand _getWeatherCommand;        
         public ICommand GetWeatherCommand
         {
@@ -149,6 +161,16 @@ namespace WeatherClient.WPF.ViewModels
             Sunset = weather.Sunset.ToString("dd/MM/yyyy HH:mm:ss");
             Sunrise = weather.Sunrise.ToString("dd/MM/yyyy HH:mm:ss");
             Weather = weather;
+            var semantic = new SemanticWeather(weather, TemperatureUnit.Celsius);
+
+            try
+            {
+                SemanticCondition = semantic.GetSemantic().ToString();
+            }
+            catch
+            {
+                SemanticCondition = "What? Not working!";
+            }
         }
 
         public override async Task LoadData(object arg)

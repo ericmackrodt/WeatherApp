@@ -15,13 +15,13 @@ namespace WeatherClient.Provider.Tests
         {
             var data = new WeatherData()
             {
-                Temperature = 3.0,
+                Temperature = 30.0,
                 WindSpeed = 2.2,
                 Humidity = 45
             };
             var sut = new ApparentTemperatureCalculator(data, SpeedUnit.Kmh);
             var result = sut.GetApparentWeather();
-            Assert.AreEqual(30, result);
+            Assert.AreEqual(31.9, result);
         }
     }
 }

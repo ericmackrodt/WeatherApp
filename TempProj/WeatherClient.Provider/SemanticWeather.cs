@@ -89,6 +89,8 @@ namespace WeatherClient.Provider
                     return SemanticScatteredClouds();
                 case WeatherConditionCode.BrokenClouds:
                     return SemanticBrokenClouds();
+                case WeatherConditionCode.OvercastClouds:
+                    return SemanticOvercastClouds();
                 case WeatherConditionCode.Hot:
                     return SemanticExtremelyHot();
                 case WeatherConditionCode.Cold:
@@ -115,45 +117,39 @@ namespace WeatherClient.Provider
             }
         }
 
+        private SemanticWeatherEnum SemanticOvercastClouds()
+        {
+            return SemanticWeatherEnum.HeavyClouds;
+        }
+
         private SemanticWeatherEnum SemanticExtremelyCold()
         {
-            throw new NotImplementedException();
+            return SemanticWeatherEnum.VeryCold;
         }
 
         private SemanticWeatherEnum SemanticExtremelyHot()
         {
-            throw new NotImplementedException();
+            return SemanticWeatherEnum.VeryHot;
         }
 
         private SemanticWeatherEnum SemanticBrokenClouds()
         {
-            throw new NotImplementedException();
+            return TemperatureToSemantic();
         }
 
         private SemanticWeatherEnum SemanticScatteredClouds()
         {
-            throw new NotImplementedException();
+            return TemperatureToSemantic();
         }
 
         private SemanticWeatherEnum SemanticFewClouds()
         {
-            throw new NotImplementedException();
+            return TemperatureToSemantic();
         }
 
         private SemanticWeatherEnum SemanticClearSky()
         {
-            if (_weather.FeelsLikeTemperature < 5)
-                return SemanticWeatherEnum.Clear_VeryCold;
-            if (_weather.FeelsLikeTemperature < 15)
-                return SemanticWeatherEnum.Clear_Cold;
-            if (_weather.FeelsLikeTemperature > 45)
-                return SemanticWeatherEnum.Clear_VeryHot;
-            if (_weather.FeelsLikeTemperature > 30)
-                return SemanticWeatherEnum.Clear_Hot;
-            if (_weather.FeelsLikeTemperature > 20)
-                return SemanticWeatherEnum.Clear_Nice;
-            
-            return SemanticWeatherEnum.Clear_NotBad;
+            return TemperatureToSemantic();
         }
 
         private SemanticWeatherEnum SemanticAtmosphereMist()
@@ -179,6 +175,22 @@ namespace WeatherClient.Provider
         private SemanticWeatherEnum SemanticThunderstorm()
         {
             throw new NotImplementedException();
+        }
+
+        private SemanticWeatherEnum TemperatureToSemantic()
+        {
+            if (_weather.FeelsLikeTemperature < 5)
+                return SemanticWeatherEnum.VeryCold;
+            if (_weather.FeelsLikeTemperature < 15)
+                return SemanticWeatherEnum.Cold;
+            if (_weather.FeelsLikeTemperature > 45)
+                return SemanticWeatherEnum.VeryHot;
+            if (_weather.FeelsLikeTemperature > 30)
+                return SemanticWeatherEnum.Hot;
+            if (_weather.FeelsLikeTemperature > 20)
+                return SemanticWeatherEnum.Nice;
+
+            return SemanticWeatherEnum.NotBad;
         }
     }
 }

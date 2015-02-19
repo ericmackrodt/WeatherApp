@@ -12,13 +12,14 @@ namespace WeatherClient.Provider.Tests
         {
             var data = new WeatherData() 
             {
-                Temperature = 20.0,
-                WeatherID = WeatherConditionCode.ClearSky,
-                
+                Temperature = 25.0,
+                WindSpeed = 1,
+                Humidity = 50,
+                WeatherID = WeatherConditionCode.ClearSky,  
             };
             var sut = new SemanticWeather(data, TemperatureUnit.Celsius);
             var result = sut.GetSemantic();
-            Assert.AreEqual(result, SemanticWeatherEnum.Clear_Nice);
+            Assert.AreEqual(SemanticWeatherEnum.Nice, result);
         }
 
         [TestMethod]
@@ -26,13 +27,14 @@ namespace WeatherClient.Provider.Tests
         {
             var data = new WeatherData()
             {
-                Temperature = 30.0,
+                Temperature = 35.0,
+                WindSpeed = 1,
+                Humidity = 50,
                 WeatherID = WeatherConditionCode.ClearSky,
-
             };
             var sut = new SemanticWeather(data, TemperatureUnit.Celsius);
             var result = sut.GetSemantic();
-            Assert.AreEqual(result, SemanticWeatherEnum.Clear_Hot);
+            Assert.AreEqual(SemanticWeatherEnum.Hot, result);
         }
 
         [TestMethod]
@@ -40,13 +42,14 @@ namespace WeatherClient.Provider.Tests
         {
             var data = new WeatherData()
             {
-                Temperature = 40.0,
+                Temperature = 45.0,
+                WindSpeed = 1,
+                Humidity = 50,
                 WeatherID = WeatherConditionCode.ClearSky,
-
             };
             var sut = new SemanticWeather(data, TemperatureUnit.Celsius);
             var result = sut.GetSemantic();
-            Assert.AreEqual(result, SemanticWeatherEnum.Clear_VeryHot);
+            Assert.AreEqual(SemanticWeatherEnum.VeryHot, result);
         }
     }
 }

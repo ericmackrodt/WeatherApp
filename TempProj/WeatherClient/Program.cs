@@ -18,16 +18,44 @@ namespace WeatherClient
 
         private static async void MainAsync(string[] args)
         {
+            Console.Write("Enter city: ");
+            var city = Console.ReadLine();
+
+            Console.Clear();
+
+            if (string.IsNullOrWhiteSpace(city))
+                city = "Rio de Janeiro,BR";
+
             var api = new OpenWeatherMapClient();
             var provider = new WeatherProvider(api);
-            var result = await provider.GetCurrentWeather("Rio de Janeiro,Br", TemperatureUnit.Celsius);
 
+            Console.WriteLine("Loading...");
+            var result = await provider.GetCurrentWeather(city, TemperatureUnit.Celsius);
+
+            Console.Clear();
             Console.WriteLine(string.Format("Cidade: {0}", result.CityName));
-            Console.WriteLine(string.Format("Degrees: {0}", result.Temperature));
-            Console.WriteLine(string.Format("Sunrise: {0:dd/MM/yyyy HH:mm}", result.Sunrise));
-            Console.WriteLine(string.Format("Sunset: {0:dd/MM/yyyy HH:mm}", result.Sunset));
+            var semantic = new SemanticWeather(result, TemperatureUnit.Celsius);
+            string semanticWeather = "";
+            try
+            {
+                semanticWeather = semantic.GetSemantic().ToString();
+            }
+            catch
+            {
+                semanticWeather = "Wait, What?";
+            }
 
-            Console.ReadKey();
+            Console.WriteLine(string.Format("Semantic Weather: {0}", semanticWeather));
+            Console.WriteLine(string.Format("Time of the Day: {0}", result.TimeOfDay.ToString()));
+            Console.WriteLine(string.Format("Temperature: {0}°C", result.Temperature));
+            Console.WriteLine(string.Format("Feels Like: {0}°C", result.FeelsLikeTemperature));
+            Console.WriteLine(string.Format("Humidity: {0}%", result.Humidity));
+            Console.WriteLine(string.Format("Wind Speed: {0} m/s", result.WindSpeed));
+            Console.WriteLine(string.Format("Sunrise: {0:dd/MM/yyyy HH:mm:ss}", result.Sunrise));
+            Console.WriteLine(string.Format("Sunset: {0:dd/MM/yyyy HH:mm:ss}", result.Sunset));
+
+            Console.WriteLine(" ");
+            MainAsync(args);
         }
     }
 }
