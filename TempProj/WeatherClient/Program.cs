@@ -30,7 +30,7 @@ namespace WeatherClient
             var provider = new WeatherProvider(api);
 
             Console.WriteLine("Loading...");
-            var result = await provider.GetCurrentWeather(city, TemperatureUnit.Celsius);
+            var result = await provider.GetCurrentWeather(-22.91, -43.16, TemperatureUnit.Celsius);
 
             Console.Clear();
             Console.WriteLine(string.Format("Cidade: {0}", result.CityName));

@@ -58,7 +58,7 @@ namespace WeatherClient.Provider
         {
             get
             {
-                return _apparentTemperatureCalc.GetFeelsLike();
+                return _apparentTemperatureCalc.GetApparentWeather();
             }
         }
 
