@@ -18,8 +18,6 @@ namespace WeatherApp.Provider
 
         public double Longitude { get; set; }
 
-        //public WeatherConditionCode WeatherID { get; set; }
-
         public string WeatherMain { get; set; }
 
         public string WeatherDescription { get; set; }

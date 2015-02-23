@@ -10,6 +10,8 @@ namespace WeatherApp.Provider.OpenWeatherMap
 {
     public class WeatherData : BaseWeatherData
     {
+        public WeatherConditionCode WeatherID { get; set; }
+
         public WeatherData()
         {
             _apparentTemperatureCalc = new ApparentTemperatureCalculator(this, SpeedUnit.Ms);
@@ -27,7 +29,7 @@ namespace WeatherApp.Provider.OpenWeatherMap
             var weather = data.Weather.FirstOrDefault();
             if (weather != null)
             {
-                //WeatherID = weather.Id;
+                WeatherID = weather.Id;
                 WeatherMain = weather.Main;
                 WeatherDescription = weather.Description;
                 IconType = weather.ToWeatherIconType();

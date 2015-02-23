@@ -36,7 +36,8 @@ namespace WeatherApp.Provider.OpenWeatherMap
 
         public SemanticWeatherEnum GetSemanticWeatherEnum(BaseWeatherData data)
         {
-            throw new NotImplementedException();
+            var semantic = new SemanticOpenWeatherMap((WeatherData)data);
+            return semantic.GetSemantic();
         }
     }
 }
