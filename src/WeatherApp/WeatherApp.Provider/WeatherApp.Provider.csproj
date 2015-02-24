@@ -42,6 +42,7 @@
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="ISemanticWeather.cs" />
     <Compile Include="IWeatherProvider.cs" />
+    <Compile Include="IWeatherProviderSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseWeatherData.cs" />
   </ItemGroup>

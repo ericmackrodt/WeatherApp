@@ -8,6 +8,7 @@
     xmlns:converters="using:WeatherApp.Common.Converters"
     xmlns:controlHelpers="using:WeatherApp.Common.ControlHelpers"
     mc:Ignorable="d"
+    RequestedTheme="Default"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
     <Page.Resources>
@@ -26,7 +27,7 @@
             <TextBlock Text="°C " FontSize="20" />
             <!--<TextBlock Text="{Binding WeatherCondition}" VerticalAlignment="Bottom" />-->
             <TextBlock Text=" - " VerticalAlignment="Bottom" />
-            <TextBlock Text="{Binding SemanticWeather}" VerticalAlignment="Bottom" />
+            <TextBlock Text="{Binding Path=WeatherData.WeatherID}" VerticalAlignment="Bottom" />
         </StackPanel>
 
         <Image Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"

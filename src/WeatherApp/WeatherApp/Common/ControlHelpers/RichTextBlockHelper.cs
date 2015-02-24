@@ -46,14 +46,31 @@ namespace WeatherApp.Common.ControlHelpers
 
             foreach (var word in words)
             {
-                var match = Regex.Match(word, @"((\[cold\])|(\[hot\])|(\[clouds\]))(?<text>[\w]*)((\[\/cold\])|(\[\/hot\])|(\[\/clouds\]))");
+                var match = Regex.Match(word, @"(?<tag>(\[cold\])|(\[hot\])|(\[clouds\]))(?<text>[\w]*)((\[\/cold\])|(\[\/hot\])|(\[\/clouds\]))");
                 if (!match.Success)
                 {
                     paragraph.Inlines.Add(new Run() { Text = word + " " });
                     continue;
                 }
 
-                paragraph.Inlines.Add(new Run() { Text = match.Groups["text"].Value + " ", Foreground = new SolidColorBrush(Colors.Red) });
+                var type = "";
+
+                switch (match.Groups["tag"].Value)
+                {
+                    case "[hot]":
+                        type = "HotColor";
+                        break;
+                    case "[cold]":
+                        type = "ColdColor";
+                        break;
+                    case "[clouds]":
+                    default:
+                        type = "CloudsColor";
+                        break;
+                }
+
+
+                paragraph.Inlines.Add(new Run() { Text = match.Groups["text"].Value + " ", Foreground = Application.Current.Resources[type] as SolidColorBrush });
             }
 
             return paragraph;

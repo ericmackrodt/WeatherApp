@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WeatherApp.Common;
 using WeatherApp.Provider;
 using WeatherApp.Provider.OpenWeatherMap;
+using WeatherApp.Settings;
 
 namespace WeatherApp.ViewModels
 {
@@ -19,6 +20,7 @@ namespace WeatherApp.ViewModels
         {
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<OpenWeatherMapSettings>().As<IOpenWeatherMapSettings>();
             builder.RegisterType<LocationProvider>().As<ILocationProvider>();
             builder.RegisterType<OpenWeatherMapClient>().As<IOpenWeatherMapClient>();
             builder.RegisterType<OpenWeatherMapProvider>().As<IWeatherProvider>();

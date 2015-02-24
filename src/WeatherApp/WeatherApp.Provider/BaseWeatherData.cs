@@ -55,7 +55,7 @@ namespace WeatherApp.Provider
         {
             get
             {
-                return _apparentTemperatureCalc.GetApparentWeather();
+                return _apparentTemperatureCalc.GetFeelsLike();
             }
         }
     }
