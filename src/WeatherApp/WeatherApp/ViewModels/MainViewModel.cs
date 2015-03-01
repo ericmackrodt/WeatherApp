@@ -15,7 +15,7 @@ namespace WeatherApp.ViewModels
     {
         private IWeatherProvider _weatherProvider;
         private ILocationProvider _locationProvider;
-        private ISentencesProvider _sentencesProvider;
+        private ISentenceProvider _sentenceProvider;
 
         private BaseWeatherData _weatherData;
         public BaseWeatherData WeatherData
@@ -28,8 +28,8 @@ namespace WeatherApp.ViewModels
             }
         }
 
-        private string _semanticWeather;
-        public string SemanticWeather
+        private SentenceData _semanticWeather;
+        public SentenceData SemanticWeather
         {
             get { return _semanticWeather; }
             set
@@ -45,11 +45,11 @@ namespace WeatherApp.ViewModels
             get { return _refreshWeatherCommand; }
         }
 
-        public MainViewModel(IWeatherProvider weatherProvider, ILocationProvider locationProvider, ISentencesProvider sentencesProvider)
+        public MainViewModel(IWeatherProvider weatherProvider, ISentenceProvider sentenceProvider, ILocationProvider locationProvider)
         {
             _weatherProvider = weatherProvider;
             _locationProvider = locationProvider;
-            _sentencesProvider = sentencesProvider;
+            _sentenceProvider = sentenceProvider;
 
             _refreshWeatherCommand = new AsyncRelayCommand(RefreshWeather);
         }
@@ -63,9 +63,9 @@ namespace WeatherApp.ViewModels
         {
             var location = await _locationProvider.GetLocation();
             WeatherData = await _weatherProvider.GetCurrentWeather(location.Point.Position.Latitude, location.Point.Position.Longitude, TemperatureUnit.Celsius);
-            var semantic = _weatherProvider.GetSemanticWeatherEnum(_weatherData);
-            var sentences = _sentencesProvider.GetSentence(semantic);
-            SemanticWeather = sentences.Sentence;
+
+            var sentence = await _sentenceProvider.GetSentence(WeatherData);
+            SemanticWeather = sentence;
         }
     }
 }

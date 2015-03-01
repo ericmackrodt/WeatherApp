@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{503EB236-43DC-4580-9FAC-E2E9F0C1E246}</ProjectGuid>
+    <ProjectGuid>{BA1ECC2C-ABDF-4B50-8A1C-B5610E7E87D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeatherApp.Provider</RootNamespace>
-    <AssemblyName>WeatherApp.Provider</AssemblyName>
+    <RootNamespace>WeatherApp.Sentences</RootNamespace>
+    <AssemblyName>WeatherApp.Sentences</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,25 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ApparentTemperatureCalculator.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="Helpers\DataHelper.cs" />
-    <Compile Include="ISemanticWeather.cs" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="Strings\WittySentences.en-US.json" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="ISentenceProvider.cs" />
-    <Compile Include="IWeatherProvider.cs" />
-    <Compile Include="IWeatherProviderSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BaseWeatherData.cs" />
-    <Compile Include="BaseSentenceProvider.cs" />
-    <Compile Include="SentenceData.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net45+wp80+win8+wpa81+aspnetcore50\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Compile Include="Sentence.cs" />
+    <Compile Include="SentenceProvider.cs" />
+    <Compile Include="WeatherType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

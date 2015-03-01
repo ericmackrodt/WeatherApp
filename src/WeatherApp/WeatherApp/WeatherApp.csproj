@@ -85,9 +85,7 @@
     <Compile Include="Common\ControlHelpers\RichTextBlockHelper.cs" />
     <Compile Include="Common\Converters\WeatherIconConverter.cs" />
     <Compile Include="Common\ILocationProvider.cs" />
-    <Compile Include="Common\ISentencesProvider.cs" />
     <Compile Include="Common\LocationProvider.cs" />
-    <Compile Include="Common\WittySentencesProvider.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -157,6 +155,10 @@
     <ProjectReference Include="..\WeatherApp.Provider.OpenWeatherMap\WeatherApp.Provider.OpenWeatherMap.csproj">
       <Project>{1eb9fd36-d5bb-49f2-9334-554602dab15a}</Project>
       <Name>WeatherApp.Provider.OpenWeatherMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeatherApp.Provider.Sentences\WeatherApp.Provider.Sentences.csproj">
+      <Project>{7d93f6be-d001-49e2-b8d6-b6c8f1784ded}</Project>
+      <Name>WeatherApp.Provider.Sentences</Name>
     </ProjectReference>
     <ProjectReference Include="..\WeatherApp.Provider\WeatherApp.Provider.csproj">
       <Project>{503eb236-43dc-4580-9fac-e2e9f0c1e246}</Project>

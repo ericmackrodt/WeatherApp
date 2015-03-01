@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WeatherApp.Common;
 using WeatherApp.Provider;
 using WeatherApp.Provider.OpenWeatherMap;
+using WeatherApp.Provider.Sentences;
 using WeatherApp.Settings;
 
 namespace WeatherApp.ViewModels
@@ -24,7 +25,7 @@ namespace WeatherApp.ViewModels
             builder.RegisterType<LocationProvider>().As<ILocationProvider>();
             builder.RegisterType<OpenWeatherMapClient>().As<IOpenWeatherMapClient>();
             builder.RegisterType<OpenWeatherMapProvider>().As<IWeatherProvider>();
-            builder.RegisterType<WittySentencesProvider>().As<ISentencesProvider>();
+            builder.RegisterType<WittySentencesProvider>().As<ISentenceProvider>();
 
             builder.RegisterType<MainViewModel>();
 

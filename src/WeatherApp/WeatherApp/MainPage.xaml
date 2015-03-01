@@ -34,7 +34,7 @@
                Source="{Binding WeatherData, Converter={StaticResource WeatherIcon}}"/>
         
         <RichTextBlock Grid.Row="2" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center" 
-                       controlHelpers:RichTextBlockHelper.Text="{Binding SemanticWeather}"/>
+                       controlHelpers:RichTextBlockHelper.Sentence="{Binding SemanticWeather}"/>
 
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>

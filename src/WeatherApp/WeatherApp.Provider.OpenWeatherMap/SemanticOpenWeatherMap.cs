@@ -23,16 +23,14 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.Thunderstorm:
                 case WeatherConditionCode.LightThunderstorm:
                 case WeatherConditionCode.RaggedThunderstorm:
-                    return SemanticThunderstorm();
                 case WeatherConditionCode.HeavyThunderstorm:
-                    return SemanticHeavyThunderstorm();
                 case WeatherConditionCode.ThunderstormWithDrizzle:
                 case WeatherConditionCode.ThunderstormWithHeavyDrizzle:
                 case WeatherConditionCode.ThunderstormWithHeavyRain:
                 case WeatherConditionCode.ThunderstormWithLightDrizzle:
                 case WeatherConditionCode.ThunderstormWithLightRain:
                 case WeatherConditionCode.ThunderstormWithRain:
-                    return SemanticThunderstormWithRain();
+                    return SemanticWeatherEnum.Thunderstorm;
                 //Drizzle
                 case WeatherConditionCode.Drizzle:
                 case WeatherConditionCode.DrizzleRain:
@@ -40,7 +38,6 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.HeavyIntensityDrizzleRain:
                 case WeatherConditionCode.LightIntensityDrizzle:
                 case WeatherConditionCode.LightIntensityDrizzleRain:
-                    return SemanticDrizzle();
                 case WeatherConditionCode.HeavyShowerRainAndDrizzle:
                 case WeatherConditionCode.ShowerRainAndDrizzle:
                 case WeatherConditionCode.ShowerDrizzle:
@@ -49,17 +46,15 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.ShowerRain:
                 case WeatherConditionCode.HeavyIntensityShowerRain:
                 case WeatherConditionCode.RaggedShowerRain:
-                    return SemanticDrizzleAndShower();
                 //Rain
                 case WeatherConditionCode.LightRain:
                 case WeatherConditionCode.ModerateRain:
-                    return SemanticRain();
                 case WeatherConditionCode.HeavyIntensityRain:
                 case WeatherConditionCode.VeryHeavyRain:
                 case WeatherConditionCode.ExtremeRain:
-                    return SemanticHeavyRain();
                 //Rain
                 case WeatherConditionCode.FreezingRain:
+                    return SemanticWeatherEnum.Raining;
                 //Snow
                 case WeatherConditionCode.LightSnow:
                 case WeatherConditionCode.Snow:
@@ -71,7 +66,7 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.LightShowerSnow:
                 case WeatherConditionCode.ShowerSnow:
                 case WeatherConditionCode.HeavyShowerSnow:
-                    return SemanticSnow();
+                    return SemanticWeatherEnum.Snow;
                 case WeatherConditionCode.Mist:
                 case WeatherConditionCode.Smoke:
                 case WeatherConditionCode.Haze:
@@ -82,22 +77,18 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.VolcanicAsh:
                 case WeatherConditionCode.Squalls:
                 case WeatherConditionCode.Tornado:
-                    return SemanticAtmosphereMist();
+                    return SemanticWeatherEnum.Fog;
                 //Atmosphere
                 case WeatherConditionCode.ClearSky:
-                    return SemanticClearSky();
+                    return SemanticWeatherEnum.Clear;
                 case WeatherConditionCode.FewClouds:
-                    return SemanticFewClouds();
                 case WeatherConditionCode.ScatteredClouds:
-                    return SemanticScatteredClouds();
                 case WeatherConditionCode.BrokenClouds:
-                    return SemanticBrokenClouds();
+                    return SemanticWeatherEnum.PartlyCloudy;
                 case WeatherConditionCode.OvercastClouds:
-                    return SemanticOvercastClouds();
+                    return SemanticWeatherEnum.Overcast;
                 case WeatherConditionCode.Hot:
-                    return SemanticExtremelyHot();
                 case WeatherConditionCode.Cold:
-                    return SemanticExtremelyCold();
                 case WeatherConditionCode.Tornado_Extreme:
                 case WeatherConditionCode.TropicalStorm:
                 case WeatherConditionCode.Hurricane:
@@ -109,129 +100,17 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.GentleBreeze:
                 case WeatherConditionCode.FreshBreeze:
                 case WeatherConditionCode.StrongBreeze:
-                    return SemanticBreeze();
                 case WeatherConditionCode.HighWindNearGale:
                 case WeatherConditionCode.Gale:
                 case WeatherConditionCode.SevereGale:
-                    return SemanticHeavyWind();
+                    return SemanticWeatherEnum.Wind;
                 case WeatherConditionCode.Storm:
                 case WeatherConditionCode.ViolentStorm:
                 case WeatherConditionCode.Hurricane_Additional:
                     return SemanticWeatherEnum.Extreme;
                 default:
-                    return SemanticWeatherEnum.Unknown;
+                    return SemanticWeatherEnum.Other;
             }
-        }
-
-        private SemanticWeatherEnum SemanticHeavyWind()
-        {
-            return SemanticWeatherEnum.HeavyWind;
-        }
-
-        private SemanticWeatherEnum SemanticBreeze()
-        {
-            return TemperatureToSemantic();
-        }
-
-        private SemanticWeatherEnum SemanticThunderstormWithRain()
-        {
-            return SemanticWeatherEnum.ThunderstormRain;
-        }
-
-        private SemanticWeatherEnum SemanticHeavyThunderstorm()
-        {
-            return SemanticWeatherEnum.HeavyThunderstorm;
-        }
-
-        private SemanticWeatherEnum SemanticDrizzle()
-        {
-            return SemanticWeatherEnum.Rain;
-        }
-
-        private SemanticWeatherEnum SemanticHeavyRain()
-        {
-            return SemanticWeatherEnum.HeavyRain;
-        }
-
-        private SemanticWeatherEnum SemanticOvercastClouds()
-        {
-            return SemanticWeatherEnum.HeavyClouds;
-        }
-
-        private SemanticWeatherEnum SemanticExtremelyCold()
-        {
-            return SemanticWeatherEnum.VeryCold;
-        }
-
-        private SemanticWeatherEnum SemanticExtremelyHot()
-        {
-            return SemanticWeatherEnum.VeryHot;
-        }
-
-        private SemanticWeatherEnum SemanticBrokenClouds()
-        {
-            return TemperatureToSemantic();
-        }
-
-        private SemanticWeatherEnum SemanticScatteredClouds()
-        {
-            return TemperatureToSemantic();
-        }
-
-        private SemanticWeatherEnum SemanticFewClouds()
-        {
-            return TemperatureToSemantic();
-        }
-
-        private SemanticWeatherEnum SemanticClearSky()
-        {
-            return TemperatureToSemantic();
-        }
-
-        private SemanticWeatherEnum SemanticAtmosphereMist()
-        {
-            return SemanticWeatherEnum.Mist;
-        }
-
-        private SemanticWeatherEnum SemanticSnow()
-        {
-            return SemanticWeatherEnum.Snow;
-        }
-
-        private SemanticWeatherEnum SemanticRain()
-        {
-            if (_weather.FeelsLikeTemperature < 15)
-                return SemanticWeatherEnum.Rain_Cold;
-            if (_weather.FeelsLikeTemperature > 30)
-                return SemanticWeatherEnum.Rain_Hot;
-
-            return SemanticWeatherEnum.Rain;
-        }
-
-        private SemanticWeatherEnum SemanticDrizzleAndShower()
-        {
-            return SemanticWeatherEnum.Rain;
-        }
-
-        private SemanticWeatherEnum SemanticThunderstorm()
-        {
-            return SemanticWeatherEnum.Thunderstorm;
-        }
-
-        private SemanticWeatherEnum TemperatureToSemantic()
-        {
-            if (_weather.FeelsLikeTemperature < 5)
-                return SemanticWeatherEnum.VeryCold;
-            if (_weather.FeelsLikeTemperature < 15)
-                return SemanticWeatherEnum.Cold;
-            if (_weather.FeelsLikeTemperature > 45)
-                return SemanticWeatherEnum.VeryHot;
-            if (_weather.FeelsLikeTemperature > 30)
-                return SemanticWeatherEnum.Hot;
-            if (_weather.FeelsLikeTemperature > 20)
-                return SemanticWeatherEnum.Nice;
-
-            return SemanticWeatherEnum.NotBad;
         }
     }
 }

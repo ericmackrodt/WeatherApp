@@ -9,7 +9,8 @@
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Default">
-                    <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="Black" />
+                    <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="#F8F8F8" />
+                    <SolidColorBrush x:Key="DefaultTextForegroundThemeBrush" Color="Black" />
 
                     <SolidColorBrush x:Key="ThemeMainColor" Color="#2152FF" />
 

@@ -12,6 +12,15 @@ namespace WeatherApp.Provider.OpenWeatherMap
     {
         public WeatherConditionCode WeatherID { get; set; }
 
+        public override SemanticWeatherEnum SemanticWeather
+        {
+            get
+            {
+                var semantic = new SemanticOpenWeatherMap(this);
+                return semantic.GetSemantic();
+            }
+        }
+
         public WeatherData()
         {
             _apparentTemperatureCalc = new ApparentTemperatureCalculator(this, SpeedUnit.Ms);

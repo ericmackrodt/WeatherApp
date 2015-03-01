@@ -1,0 +1,28 @@
+﻿[
+    {
+        "Phrase": "Couldn't get the [highlight]fucking[/highlight] weather right now.",
+        "SubText": "Take a look outside for more info",
+        "Condition": "Unknown",
+        "Color": "#FF0060"
+    },
+    {
+        "Phrase": "[highlight]Love is[/highlight] in the fucking air.",
+        "SubText": "Take off your shirt and get wet.",
+        "Min": 25,
+        "Condition": "Clear",
+        "Color": "#FF0060"
+    },
+    {
+        "Phrase": "It's [highlight]fucking[/highlight] raining.",
+        "SubText": "You can look outside to get more information.",
+        "Condition": "Raining",
+        "Color": "#007EFF"
+    },
+    {
+         "Phrase":"Totally [highlight]not[/highlight] shitty.",
+         "SubText":"Look outside for more information.",
+         "Min":10,
+         "Condition":"PartlyCloudy",
+         "Color":"#004A96"
+      },
+]

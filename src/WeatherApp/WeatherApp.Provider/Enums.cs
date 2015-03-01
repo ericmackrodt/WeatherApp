@@ -6,27 +6,50 @@ using System.Threading.Tasks;
 
 namespace WeatherApp.Provider
 {
+//    no condition
+//clear
+//raining|rain
+//cloudy
+//partly cloudy
+//snow
+//sleet
+//wind
+//fog
+
     public enum SemanticWeatherEnum
     {
-        Unknown,
-        Extreme,
-        Nice,
-        NotBad,
-        Cold,
-        VeryCold,
-        Hot,
-        VeryHot,
-        HeavyClouds,
-        Rain,
-        Rain_Cold,
-        Rain_Hot,
-        HeavyRain,
-        Snow,
+        Clear,
+        Raining,
+        PartlyCloudy,
+        Overcast,
         Thunderstorm,
-        ThunderstormRain,
-        HeavyThunderstorm,
-        Mist,
-        HeavyWind
+        Snow,
+        Sleet,
+        Wind,
+        Fog,
+        Extreme,
+        Other
+
+
+        //Unknown,
+        //Extreme,
+        //Nice,
+        //NotBad,
+        //Cold,
+        //VeryCold,
+        //Hot,
+        //VeryHot,
+        //HeavyClouds,
+        //Rain,
+        //Rain_Cold,
+        //Rain_Hot,
+        //HeavyRain,
+        //Snow,
+        //Thunderstorm,
+        //ThunderstormRain,
+        //HeavyThunderstorm,
+        //Mist,
+        //HeavyWind
     }
 
     public enum SpeedUnit

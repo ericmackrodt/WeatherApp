@@ -33,11 +33,5 @@ namespace WeatherApp.Provider.OpenWeatherMap
             var data = await _apiClient.GetWeather(locationId, (Units)unit);
             return new WeatherData(data, unit);
         }
-
-        public SemanticWeatherEnum GetSemanticWeatherEnum(BaseWeatherData data)
-        {
-            var semantic = new SemanticOpenWeatherMap((WeatherData)data);
-            return semantic.GetSemantic();
-        }
     }
 }

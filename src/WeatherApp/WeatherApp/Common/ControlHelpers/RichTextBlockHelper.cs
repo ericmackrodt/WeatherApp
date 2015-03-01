@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using WeatherApp.Provider;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -14,66 +15,79 @@ namespace WeatherApp.Common.ControlHelpers
 {
     public static class RichTextBlockHelper
     {
-        public static string GetText(DependencyObject obj)
+        public static SentenceData GetSentence(DependencyObject obj)
         {
-            return (string)obj.GetValue(TextProperty);
+            return (SentenceData)obj.GetValue(SentenceProperty);
         }
 
-        public static void SetText(DependencyObject obj, string value)
+        public static void SetSentence(DependencyObject obj, SentenceData value)
         {
-            obj.SetValue(TextProperty, value);
+            obj.SetValue(SentenceProperty, value);
         }
 
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.RegisterAttached("Text", typeof(string), typeof(RichTextBlockHelper), new PropertyMetadata(null, OnTextChanged));
+        public static readonly DependencyProperty SentenceProperty =
+            DependencyProperty.RegisterAttached("Sentence", typeof(SentenceData), typeof(RichTextBlockHelper), new PropertyMetadata(null, OnSentenceChanged));
 
-        private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnSentenceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = d as RichTextBlock;
             if (control == null) return;
             control.Blocks.Clear();
 
-            var value = e.NewValue.ToString();
+            var value = (SentenceData)e.NewValue;
             var paragraph = InterpretValue(value);
 
             control.Blocks.Add(paragraph);
         }
 
-        private static Paragraph InterpretValue(string value)
+        private static Paragraph InterpretValue(SentenceData value)
         {
             var paragraph = new Paragraph();
-            var words = value.Split(' ');
+            var words = value.Phrase.Split(' ');
 
             foreach (var word in words)
             {
-                var match = Regex.Match(word, @"(?<tag>(\[cold\])|(\[hot\])|(\[clouds\]))(?<text>[\w]*)((\[\/cold\])|(\[\/hot\])|(\[\/clouds\]))");
+                var match = Regex.Match(word, @"(?<tag>\[highlight\])(?<text>[\w]*)(\[\/highlight\])");
                 if (!match.Success)
                 {
                     paragraph.Inlines.Add(new Run() { Text = word + " " });
                     continue;
                 }
 
-                var type = "";
+                var color = ConvertStringToColor(value.Color);
+                var text = match.Groups["text"].Value;
 
-                switch (match.Groups["tag"].Value)
-                {
-                    case "[hot]":
-                        type = "HotColor";
-                        break;
-                    case "[cold]":
-                        type = "ColdColor";
-                        break;
-                    case "[clouds]":
-                    default:
-                        type = "CloudsColor";
-                        break;
-                }
-
-
-                paragraph.Inlines.Add(new Run() { Text = match.Groups["text"].Value + " ", Foreground = Application.Current.Resources[type] as SolidColorBrush });
+                paragraph.Inlines.Add(new Run() { Text = text + " ", Foreground = new SolidColorBrush(color) });
             }
 
             return paragraph;
+        }
+
+        public static Color ConvertStringToColor(string hex)
+        {
+            //remove the # at the front
+            hex = hex.Replace("#", "");
+
+            byte a = 255;
+            byte r = 255;
+            byte g = 255;
+            byte b = 255;
+
+            int start = 0;
+
+            //handle ARGB strings (8 characters long)
+            if (hex.Length == 8)
+            {
+                a = byte.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                start = 2;
+            }
+
+            //convert RGB characters to bytes
+            r = byte.Parse(hex.Substring(start, 2), System.Globalization.NumberStyles.HexNumber);
+            g = byte.Parse(hex.Substring(start + 2, 2), System.Globalization.NumberStyles.HexNumber);
+            b = byte.Parse(hex.Substring(start + 4, 2), System.Globalization.NumberStyles.HexNumber);
+
+            return Color.FromArgb(a, r, g, b);
         }
     }
 }
