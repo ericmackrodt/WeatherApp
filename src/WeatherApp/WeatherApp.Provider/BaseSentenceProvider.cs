@@ -35,9 +35,10 @@ namespace WeatherApp.Provider
 
             if (byTemperature != null && byTemperature.Any())
                 selectedSentences = byTemperature.ToArray();
-            else if (byType != null && byType.Any())
-                selectedSentences = byType.ToArray();
             else
+                selectedSentences = byType.Where(o => o.Min == null && o.Max == null).ToArray();
+            
+            if (selectedSentences == null || !selectedSentences.Any())
                 return sentences.FirstOrDefault(o => o.Condition == "Unknown");
 
             var random = new Random().Next(0, selectedSentences.Length - 1);

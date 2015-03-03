@@ -10,13 +10,15 @@
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Default">
                     <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="#F8F8F8" />
-                    <SolidColorBrush x:Key="DefaultTextForegroundThemeBrush" Color="Black" />
+                    <SolidColorBrush x:Key="DefaultTextForegroundThemeBrush" Color="#FFFFFF" />
 
                     <SolidColorBrush x:Key="ThemeMainColor" Color="#2152FF" />
 
                     <SolidColorBrush x:Key="HotColor" Color="#FF653A" />
                     <SolidColorBrush x:Key="ColdColor" Color="#052CB2" />
                     <SolidColorBrush x:Key="CloudColor" Color="#CCCCCC" />
+                    
+                    <SolidColorBrush x:Key="OpacityBackground" Color="#30000000" />
                 </ResourceDictionary>    
             </ResourceDictionary.ThemeDictionaries>
             

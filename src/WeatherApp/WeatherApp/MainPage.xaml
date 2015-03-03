@@ -13,62 +13,59 @@
     DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
     <Page.Resources>
         <converters:WeatherIconConverter x:Key="WeatherIcon" />
+        <converters:BackgroundImageConverter x:Key="WeatherBackground" />
     </Page.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{Binding Path=WeatherData.Temperature}" FontSize="20" />
-            <TextBlock Text="°C " FontSize="20" />
-            <!--<TextBlock Text="{Binding WeatherCondition}" VerticalAlignment="Bottom" />-->
-            <TextBlock Text=" - " VerticalAlignment="Bottom" />
-            <TextBlock Text="{Binding Path=WeatherData.WeatherID}" VerticalAlignment="Bottom" />
-        </StackPanel>
-
-        <Image Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-               Source="{Binding WeatherData, Converter={StaticResource WeatherIcon}}"/>
-        
-        <RichTextBlock Grid.Row="2" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center" 
-                       controlHelpers:RichTextBlockHelper.Sentence="{Binding SemanticWeather}"/>
-
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Vertical">
-                <TextBlock Text="Feels Like" HorizontalAlignment="Center" />
-                <TextBlock Text="{Binding Path=WeatherData.FeelsLikeTemperature}" HorizontalAlignment="Center" />
-            </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Vertical">
-                <TextBlock Text="Humidity" HorizontalAlignment="Center" />
-                <TextBlock Text="{Binding Path=WeatherData.Humidity}" HorizontalAlignment="Center" />
-            </StackPanel>
-            <StackPanel Grid.Column="2" Orientation="Vertical">
-                <TextBlock Text="Wind Speed" HorizontalAlignment="Center" />
-                <TextBlock Text="{Binding Path=WeatherData.WindSpeed}" HorizontalAlignment="Center" />
-            </StackPanel>
-        </Grid>
-
-        <Grid Grid.Row="4">
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding WeatherData, Converter={StaticResource WeatherBackground}}" Stretch="UniformToFill" AlignmentY="Top" />
+        </Grid.Background>
+        <Border Background="{StaticResource OpacityBackground}" />
+        <Grid Margin="20,35,20,20">
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Sunrise: " />
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=WeatherData.Sunrise}" />
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Sunset: " />
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=WeatherData.Sunset}" />
+           
+            <StackPanel Grid.Row="0" Orientation="Horizontal">                
+                <Image Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Source="{Binding WeatherData, Converter={StaticResource WeatherIcon}}" MaxHeight="72" Margin="0,0,10,0"/>
+                
+                <TextBlock Text="{Binding Path=WeatherData.Temperature}" FontSize="42"
+                           VerticalAlignment="Center"/>
+                <TextBlock Text="°C " FontSize="42"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center">
+                <RichTextBlock FontWeight="Bold" FontSize="42" HorizontalAlignment="Center" TextAlignment="Center" 
+                           controlHelpers:RichTextBlockHelper.Sentence="{Binding SemanticWeather}"/>
+                <TextBlock FontWeight="Normal" FontSize="20" HorizontalAlignment="Center"
+                           Margin="0,5" TextAlignment="Center"
+                           Text="{Binding SemanticWeather.SubText}"/>
+            </StackPanel>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" FontSize="20" Text="Feels Like:" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="20" Margin="5,0" FontWeight="Bold" Text="{Binding Path=WeatherData.FeelsLikeTemperature}" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" FontSize="20" Text="Humidity:" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Margin="5,0" FontWeight="Bold" Text="{Binding Path=WeatherData.Humidity}" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="2" Grid.Column="0" FontSize="20" Text="Wind Speed:" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20" Margin="5,0" FontWeight="Bold" Text="{Binding Path=WeatherData.WindSpeed}" HorizontalAlignment="Left" />
+            </Grid>
         </Grid>
     </Grid>
 </Page>

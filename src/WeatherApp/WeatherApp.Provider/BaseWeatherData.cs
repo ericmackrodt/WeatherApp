@@ -42,7 +42,7 @@ namespace WeatherApp.Provider
 
         public TemperatureUnit TemperatureUnit { get; set; }
 
-        public abstract SemanticWeatherEnum SemanticWeather { get; }
+        public SemanticWeatherEnum SemanticWeather { get; set; }
 
         public TimeOfDay TimeOfDay
         {

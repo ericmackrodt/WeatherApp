@@ -6,7 +6,7 @@
         "Color": "#FF0060"
     },
     {
-        "Phrase": "[highlight]Love is[/highlight] in the fucking air.",
+        "Phrase": "[highlight]Love[/highlight] [highlight]is[/highlight] in the fucking air.",
         "SubText": "Take off your shirt and get wet.",
         "Min": 25,
         "Condition": "Clear",
