@@ -18,7 +18,7 @@ namespace WeatherApp.Common.Converters
                 return null;
 
 
-            var bitmapImage = new BitmapImage(new Uri(string.Format("ms-appx:///Assets/WeatherBackgrounds/{0}_{1}.jpg", data.TimeOfDay.ToString(), data.SemanticWeather.ToString()), UriKind.Absolute));
+            var bitmapImage = new BitmapImage(new Uri(string.Format("ms-appx:///Assets/WeatherBackgrounds/{0}_{1}.jpg", data.TimeOfDay.ToString(), data.ConditionType.ToString()), UriKind.Absolute));
             return bitmapImage;
         }
 

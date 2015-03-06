@@ -78,28 +78,29 @@ namespace WeatherApp.ViewModels
         internal async void CycleWeather()
         {
             var weatherList = new List<BaseWeatherData>();
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ClearSky, WeatherIconType.ClearSky, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.BrokenClouds, WeatherIconType.BrokenClouds, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.FewClouds, WeatherIconType.FewClouds, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Mist, WeatherIconType.Mist, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ShowerRain, WeatherIconType.Rain, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ScatteredClouds, WeatherIconType.ScatteredClouds, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ShowerRain, WeatherIconType.ShowerRain, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Snow, WeatherIconType.Snow, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Thunderstorm, WeatherIconType.Thunderstorm, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.OvercastClouds, WeatherIconType.ScatteredClouds, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Sleet, WeatherIconType.Snow, TimeOfDay.Day));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ClearSky, WeatherIconType.ClearSky, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.BrokenClouds, WeatherIconType.BrokenClouds, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.FewClouds, WeatherIconType.FewClouds, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Mist, WeatherIconType.Mist, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ShowerRain, WeatherIconType.Rain, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ScatteredClouds, WeatherIconType.ScatteredClouds, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ShowerRain, WeatherIconType.ShowerRain, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Snow, WeatherIconType.Snow, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Thunderstorm, WeatherIconType.Thunderstorm, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.OvercastClouds, WeatherIconType.ScatteredClouds, TimeOfDay.Night));
-            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Sleet, WeatherIconType.Snow, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Thunderstorm, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Drizzle, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ShowerRain, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Snow, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Sleet, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Fog, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ClearSky, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ScatteredClouds, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.OvercastClouds, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Hail, TimeOfDay.Day));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Gale, TimeOfDay.Day));
+
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Thunderstorm, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Drizzle, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ShowerRain, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Snow, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Sleet, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Fog, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ClearSky, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.ScatteredClouds, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.OvercastClouds, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Hail, TimeOfDay.Night));
+            weatherList.Add(NewMethod(OpenWeatherMapApiClient.WeatherConditionCode.Gale, TimeOfDay.Night));
 
             await SetWeather(weatherList[currentWeather]);
 
@@ -109,21 +110,20 @@ namespace WeatherApp.ViewModels
                 currentWeather++;
         }
 
-        private static Provider.OpenWeatherMap.WeatherData NewMethod(OpenWeatherMapApiClient.WeatherConditionCode weatherId, WeatherIconType iconType, TimeOfDay timeOfDay)
+        private static Provider.OpenWeatherMap.WeatherData NewMethod(OpenWeatherMapApiClient.WeatherConditionCode weatherId, TimeOfDay timeOfDay)
         {
             var weatherData = new WeatherApp.Provider.OpenWeatherMap.WeatherData()
             {
                 CityName = "Whatever",
                 Date = DateTime.Now,
                 Humidity = 60,
-                IconType = iconType,
                 Temperature = 25,
                 WindSpeed = 5,
                 WeatherID = weatherId
             };
 
-            var semantic = new WeatherApp.Provider.OpenWeatherMap.SemanticOpenWeatherMap(weatherData);
-            weatherData.SemanticWeather = semantic.GetSemantic();
+            var semantic = new WeatherApp.Provider.OpenWeatherMap.OWMWeatherTypeConverter(weatherData);
+            weatherData.ConditionType = semantic.GetSemantic();
 
             if (timeOfDay == TimeOfDay.Day)
             {

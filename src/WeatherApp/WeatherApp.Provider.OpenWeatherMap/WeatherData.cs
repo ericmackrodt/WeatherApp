@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WeatherApp.Provider.Helpers;
-using WeatherApp.Provider.OpenWeatherMap.Helpers;
 
 namespace WeatherApp.Provider.OpenWeatherMap
 {
@@ -32,7 +31,6 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 WeatherID = weather.Id;
                 WeatherMain = weather.Main;
                 WeatherDescription = weather.Description;
-                IconType = weather.ToWeatherIconType();
             }
 
             Temperature = data.Main.Temperature;
@@ -53,8 +51,8 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 WindSpeed = wind.Speed;
             }
 
-            var semantic = new SemanticOpenWeatherMap(this);
-            SemanticWeather = semantic.GetSemantic();
+            var semantic = new OWMWeatherTypeConverter(this);
+            ConditionType = semantic.GetSemantic();
         }
     }
 }

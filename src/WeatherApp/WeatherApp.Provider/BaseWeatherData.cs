@@ -38,11 +38,11 @@ namespace WeatherApp.Provider
 
         public double WindSpeed { get; set; }
 
-        public WeatherIconType IconType { get; set; }
+        //public WeatherIconType IconType { get; set; }
 
         public TemperatureUnit TemperatureUnit { get; set; }
 
-        public SemanticWeatherEnum SemanticWeather { get; set; }
+        public WeatherConditionType ConditionType { get; set; }
 
         public TimeOfDay TimeOfDay
         {

@@ -37,7 +37,6 @@
     <Compile Include="ApparentTemperatureCalculator.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Helpers\DataHelper.cs" />
-    <Compile Include="ISemanticWeather.cs" />
     <Compile Include="ISentenceProvider.cs" />
     <Compile Include="IWeatherProvider.cs" />
     <Compile Include="IWeatherProviderSettings.cs" />

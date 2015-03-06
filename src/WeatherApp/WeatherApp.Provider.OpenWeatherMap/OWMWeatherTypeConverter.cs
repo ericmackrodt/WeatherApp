@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace WeatherApp.Provider.OpenWeatherMap
 {
-    public class SemanticOpenWeatherMap
+    public class OWMWeatherTypeConverter
     {
         private WeatherData _weather;
 
-        public SemanticOpenWeatherMap(WeatherData weather)
+        public OWMWeatherTypeConverter(WeatherData weather)
         {
             _weather = weather;
         }
 
-        public SemanticWeatherEnum GetSemantic()
+        public WeatherConditionType GetSemantic()
         {
             switch (_weather.WeatherID)
             {
@@ -30,7 +30,7 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.ThunderstormWithLightDrizzle:
                 case WeatherConditionCode.ThunderstormWithLightRain:
                 case WeatherConditionCode.ThunderstormWithRain:
-                    return SemanticWeatherEnum.Thunderstorm;
+                    return WeatherConditionType.Thunderstorm;
                 //Drizzle
                 case WeatherConditionCode.Drizzle:
                 case WeatherConditionCode.DrizzleRain:
@@ -41,6 +41,7 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.HeavyShowerRainAndDrizzle:
                 case WeatherConditionCode.ShowerRainAndDrizzle:
                 case WeatherConditionCode.ShowerDrizzle:
+                    return WeatherConditionType.Drizzle;
                 //Rain
                 case WeatherConditionCode.LightIntensityShowerRain:
                 case WeatherConditionCode.ShowerRain:
@@ -54,19 +55,20 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.ExtremeRain:
                 //Rain
                 case WeatherConditionCode.FreezingRain:
-                    return SemanticWeatherEnum.Raining;
+                    return WeatherConditionType.Rain;
                 //Snow
                 case WeatherConditionCode.LightSnow:
                 case WeatherConditionCode.Snow:
                 case WeatherConditionCode.HeavySnow:
-                case WeatherConditionCode.Sleet:
-                case WeatherConditionCode.ShowerSleet:
-                case WeatherConditionCode.LightRainAndSnow:
-                case WeatherConditionCode.RainAndSnow:
                 case WeatherConditionCode.LightShowerSnow:
                 case WeatherConditionCode.ShowerSnow:
                 case WeatherConditionCode.HeavyShowerSnow:
-                    return SemanticWeatherEnum.Snow;
+                    return WeatherConditionType.Snow;
+                case WeatherConditionCode.LightRainAndSnow:
+                case WeatherConditionCode.RainAndSnow:
+                case WeatherConditionCode.Sleet:
+                case WeatherConditionCode.ShowerSleet:
+                    return WeatherConditionType.Sleet;
                 case WeatherConditionCode.Mist:
                 case WeatherConditionCode.Smoke:
                 case WeatherConditionCode.Haze:
@@ -77,39 +79,42 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 case WeatherConditionCode.VolcanicAsh:
                 case WeatherConditionCode.Squalls:
                 case WeatherConditionCode.Tornado:
-                    return SemanticWeatherEnum.Fog;
+                    return WeatherConditionType.Fog;
                 //Atmosphere
                 case WeatherConditionCode.ClearSky:
-                    return SemanticWeatherEnum.Clear;
+                    return WeatherConditionType.Clear;
                 case WeatherConditionCode.FewClouds:
                 case WeatherConditionCode.ScatteredClouds:
                 case WeatherConditionCode.BrokenClouds:
-                    return SemanticWeatherEnum.PartlyCloudy;
+                    return WeatherConditionType.PartlyCloudy;
                 case WeatherConditionCode.OvercastClouds:
-                    return SemanticWeatherEnum.Overcast;
+                    return WeatherConditionType.Overcast;
                 case WeatherConditionCode.Hot:
                 case WeatherConditionCode.Cold:
                 case WeatherConditionCode.Tornado_Extreme:
                 case WeatherConditionCode.TropicalStorm:
                 case WeatherConditionCode.Hurricane:
                 case WeatherConditionCode.Windy:
-                case WeatherConditionCode.hail:
-                    return SemanticWeatherEnum.Extreme;
+                    return WeatherConditionType.Extreme;
+                case WeatherConditionCode.Hail:
+                    return WeatherConditionType.Hail;
+                //Wind
                 case WeatherConditionCode.Calm:
                 case WeatherConditionCode.LightBreeze:
                 case WeatherConditionCode.GentleBreeze:
                 case WeatherConditionCode.FreshBreeze:
                 case WeatherConditionCode.StrongBreeze:
+                    return WeatherConditionType.Clear;
                 case WeatherConditionCode.HighWindNearGale:
                 case WeatherConditionCode.Gale:
                 case WeatherConditionCode.SevereGale:
-                    return SemanticWeatherEnum.Wind;
+                    return WeatherConditionType.Wind;
                 case WeatherConditionCode.Storm:
                 case WeatherConditionCode.ViolentStorm:
                 case WeatherConditionCode.Hurricane_Additional:
-                    return SemanticWeatherEnum.Extreme;
+                    return WeatherConditionType.Extreme;
                 default:
-                    return SemanticWeatherEnum.Other;
+                    return WeatherConditionType.Other;
             }
         }
     }

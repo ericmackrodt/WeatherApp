@@ -117,58 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Cold_0" xml:space="preserve">
-    <value>Feel the fucking [cold]chills[/cold]</value>
+  <data name="FeelsLike.Text" xml:space="preserve">
+    <value>Feels like:</value>
   </data>
-  <data name="Cold_Sub_0" xml:space="preserve">
-    <value>It's getting cold, time to get under the blankets.</value>
+  <data name="Humidity.Text" xml:space="preserve">
+    <value>Humidity:</value>
   </data>
-  <data name="HeavyClouds_0" xml:space="preserve">
-    <value>Just fucking [clouds]gray...[/clouds]</value>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Settings</value>
   </data>
-  <data name="HeavyClouds_Sub_0" xml:space="preserve">
-    <value>Don't feel like doing anything today...</value>
-  </data>
-  <data name="Hot_0" xml:space="preserve">
-    <value>Time to go to the fucking [hot]beach[/hot].</value>
-  </data>
-  <data name="Hot_Sub_0" xml:space="preserve">
-    <value>Now it's the time for an icecream!</value>
-  </data>
-  <data name="Nice_0" xml:space="preserve">
-    <value>Love is in the [hot]fucking[/hot] air.</value>
-  </data>
-  <data name="Nice_sub_0" xml:space="preserve">
-    <value>Watch the birds singin' and shit.</value>
-  </data>
-  <data name="NotBad_0" xml:space="preserve">
-    <value>Not entirely [clouds]Shitty[/clouds].</value>
-  </data>
-  <data name="NotBad_Sub_0" xml:space="preserve">
-    <value>But also not good...</value>
-  </data>
-  <data name="Rain_0" xml:space="preserve">
-    <value>Rain drops keep falling on my [cold]fucking[/cold] head.</value>
-  </data>
-  <data name="Rain_Sub_0" xml:space="preserve">
-    <value>Or not if you are indoors...</value>
-  </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Couldn't get the [hot]fucking[/hot] weather right now.</value>
-  </data>
-  <data name="Unknown_Sub" xml:space="preserve">
-    <value>Take a look outside for more info.</value>
-  </data>
-  <data name="VeryCold_0" xml:space="preserve">
-    <value>Feels like the fucking [cold]North[/cold] [cold]Pole[/cold]</value>
-  </data>
-  <data name="VeryCold_Sub_0" xml:space="preserve">
-    <value>Go outside and you might turn into a popsicle</value>
-  </data>
-  <data name="VeryHot_0" xml:space="preserve">
-    <value>It's... Too... Fucking... [hot]Hot...[/hot]</value>
-  </data>
-  <data name="VeryHot_Sub_0" xml:space="preserve">
-    <value>Got to the swimming pool or burn...</value>
+  <data name="WindSpeed.Text" xml:space="preserve">
+    <value>Wind speed:</value>
   </data>
 </root>

@@ -6,20 +6,10 @@ using System.Threading.Tasks;
 
 namespace WeatherApp.Provider
 {
-//    no condition
-//clear
-//raining|rain
-//cloudy
-//partly cloudy
-//snow
-//sleet
-//wind
-//fog
-
-    public enum SemanticWeatherEnum
+    public enum WeatherConditionType
     {
         Clear,
-        Raining,
+        Rain,
         PartlyCloudy,
         Overcast,
         Thunderstorm,
@@ -27,29 +17,10 @@ namespace WeatherApp.Provider
         Sleet,
         Wind,
         Fog,
-        Extreme,
-        Other
-
-
-        //Unknown,
-        //Extreme,
-        //Nice,
-        //NotBad,
-        //Cold,
-        //VeryCold,
-        //Hot,
-        //VeryHot,
-        //HeavyClouds,
-        //Rain,
-        //Rain_Cold,
-        //Rain_Hot,
-        //HeavyRain,
-        //Snow,
-        //Thunderstorm,
-        //ThunderstormRain,
-        //HeavyThunderstorm,
-        //Mist,
-        //HeavyWind
+        Drizzle,
+        Hail,
+        Extreme,//
+        Other//
     }
 
     public enum SpeedUnit
@@ -71,19 +42,5 @@ namespace WeatherApp.Provider
     {
         Day,
         Night
-    }
-
-    public enum WeatherIconType
-    {
-        ClearSky,
-        FewClouds,
-        ScatteredClouds,
-        BrokenClouds,
-        ShowerRain,
-        Rain,
-        Thunderstorm,
-        Snow,
-        Mist,
-        None
     }
 }

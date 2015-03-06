@@ -20,7 +20,7 @@
             <ImageBrush ImageSource="{Binding WeatherData, Converter={StaticResource WeatherBackground}}" Stretch="UniformToFill" AlignmentY="Top" />
         </Grid.Background>
         <Border Background="{StaticResource OpacityBackground}" />
-        <Grid Margin="20">
+        <Grid Margin="20,20,20,40">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
@@ -43,7 +43,7 @@
                 <RichTextBlock FontWeight="Bold" FontSize="42" HorizontalAlignment="Center" TextAlignment="Center" 
                            controlHelpers:RichTextBlockHelper.Sentence="{Binding SemanticWeather}"/>
                 <TextBlock FontWeight="Normal" FontSize="20" HorizontalAlignment="Center"
-                           Margin="0,5" TextAlignment="Center"
+                           Margin="0,5" TextAlignment="Center" TextWrapping="Wrap"
                            Text="{Binding SemanticWeather.SubText}"/>
             </StackPanel>
 
@@ -57,21 +57,22 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" FontSize="20" Text="Feels Like:" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="0" Grid.Column="0" FontSize="20" x:Uid="FeelsLike" Text="" HorizontalAlignment="Left" />
                 <TextBlock Grid.Row="0" Grid.Column="1" FontSize="20" Margin="5,0" FontWeight="Bold" Text="{Binding Path=WeatherData.FeelsLikeTemperature}" HorizontalAlignment="Left" />
 
-                <TextBlock Grid.Row="1" Grid.Column="0" FontSize="20" Text="Humidity:" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="1" Grid.Column="0" FontSize="20" x:Uid="Humidity" Text="" HorizontalAlignment="Left" />
                 <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Margin="5,0" FontWeight="Bold" Text="{Binding Path=WeatherData.Humidity}" HorizontalAlignment="Left" />
 
-                <TextBlock Grid.Row="2" Grid.Column="0" FontSize="20" Text="Wind Speed:" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="2" Grid.Column="0" FontSize="20" x:Uid="WindSpeed" Text="" HorizontalAlignment="Left" />
                 <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20" Margin="5,0" FontWeight="Bold" Text="{Binding Path=WeatherData.WindSpeed}" HorizontalAlignment="Left" />
             </Grid>
         </Grid>
     </Grid>
     
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Minimal" IsSticky="True" x:Name="appBar">
+        <CommandBar ClosedDisplayMode="Minimal" IsSticky="False" x:Name="appBar" Background="#90000000">
             <CommandBar.SecondaryCommands>
+                <AppBarButton x:Uid="Settings" Label="" />
                 <AppBarButton x:Name="BtnCycleWeather" Label="Cycle Weather" Click="BtnCycleWeather_Click" />
             </CommandBar.SecondaryCommands>
         </CommandBar>

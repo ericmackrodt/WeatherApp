@@ -22,7 +22,7 @@ namespace WeatherApp.Provider
         private SentenceData ProcessSentenceData(BaseWeatherData data, SentenceData[] sentences)
         {
             SentenceData[] selectedSentences = null;
-            var byType = sentences.Where(o => o.Condition == data.SemanticWeather.ToString());
+            var byType = sentences.Where(o => o.Condition == data.ConditionType.ToString());
             if (byType == null || !byType.Any())
                 byType = sentences;
             
