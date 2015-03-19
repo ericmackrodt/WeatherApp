@@ -33,10 +33,10 @@ namespace WeatherApp.Provider.OpenWeatherMap
                 WeatherDescription = weather.Description;
             }
 
-            Temperature = data.Main.Temperature;
+            Temperature = Math.Round(data.Main.Temperature, 1);
             Humidity = data.Main.Humidity;
-            MinTemperature = data.Main.MinTemperature;
-            MaxTemperature = data.Main.MaxTemperature;
+            MinTemperature = Math.Round(data.Main.MinTemperature, 1);
+            MaxTemperature = Math.Round(data.Main.MaxTemperature, 1);
 
             var sys = data.Sys;
             if (sys != null)

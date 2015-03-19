@@ -12,7 +12,8 @@ namespace WeatherApp.Common
         public async Task<Geocoordinate> GetLocation()
         {
             var locator = new Geolocator();
-            locator.DesiredAccuracy = PositionAccuracy.Default;
+            locator.DesiredAccuracyInMeters = 2000;
+            locator.MovementThreshold = 1000;
 
             try
             {
