@@ -47,21 +47,21 @@ namespace WeatherApp.Common
             icons.Add(WeatherConditionType.Thunderstorm,    TimeOfDay.Day, (char)Int16.Parse("f010", NumberStyles.AllowHexSpecifier));
             icons.Add(WeatherConditionType.Wind,            TimeOfDay.Day, (char)Int16.Parse("f007", NumberStyles.AllowHexSpecifier));
             
-            icons.Add(WeatherConditionType.Clear,           TimeOfDay.Night, (char)Int16.Parse("f00d", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Drizzle,         TimeOfDay.Night, (char)Int16.Parse("f04e", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Clear,           TimeOfDay.Night, (char)Int16.Parse("f02e", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Drizzle,         TimeOfDay.Night, (char)Int16.Parse("f02b", NumberStyles.AllowHexSpecifier));
             icons.Add(WeatherConditionType.Extreme,         TimeOfDay.Night, (char)Int16.Parse("f0c7", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Fog,             TimeOfDay.Night, (char)Int16.Parse("f003", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Hail,            TimeOfDay.Night, (char)Int16.Parse("f004", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.HeavyRain,       TimeOfDay.Night, (char)Int16.Parse("f008", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.HeavySnow,       TimeOfDay.Night, (char)Int16.Parse("f00a", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Fog,             TimeOfDay.Night, (char)Int16.Parse("f04a", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Hail,            TimeOfDay.Night, (char)Int16.Parse("f032", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.HeavyRain,       TimeOfDay.Night, (char)Int16.Parse("f029", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.HeavySnow,       TimeOfDay.Night, (char)Int16.Parse("f02a", NumberStyles.AllowHexSpecifier));
             icons.Add(WeatherConditionType.Other,           TimeOfDay.Night, (char)Int16.Parse("f00d", NumberStyles.AllowHexSpecifier));
             icons.Add(WeatherConditionType.Overcast,        TimeOfDay.Night, (char)Int16.Parse("f00c", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.PartlyCloudy,    TimeOfDay.Night, (char)Int16.Parse("f002", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Rain,            TimeOfDay.Night, (char)Int16.Parse("f008", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Sleet,           TimeOfDay.Night, (char)Int16.Parse("f0b2", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Snow,            TimeOfDay.Night, (char)Int16.Parse("f00a", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Thunderstorm,    TimeOfDay.Night, (char)Int16.Parse("f010", NumberStyles.AllowHexSpecifier));
-            icons.Add(WeatherConditionType.Wind,            TimeOfDay.Night, (char)Int16.Parse("f007", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.PartlyCloudy,    TimeOfDay.Night, (char)Int16.Parse("f083", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Rain,            TimeOfDay.Night, (char)Int16.Parse("f028", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Sleet,           TimeOfDay.Night, (char)Int16.Parse("f0b4", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Snow,            TimeOfDay.Night, (char)Int16.Parse("f02a", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Thunderstorm,    TimeOfDay.Night, (char)Int16.Parse("f02d", NumberStyles.AllowHexSpecifier));
+            icons.Add(WeatherConditionType.Wind,            TimeOfDay.Night, (char)Int16.Parse("f023", NumberStyles.AllowHexSpecifier));
         }
 
         private void SetBackgrounds()
