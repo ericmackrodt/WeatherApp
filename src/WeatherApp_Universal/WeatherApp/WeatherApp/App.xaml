@@ -1,0 +1,33 @@
+﻿<Application
+    x:Class="WeatherApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherApp"
+    xmlns:ViewModels="using:WeatherApp.ViewModels">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/WeatherIcons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="#F8F8F8" />
+                    <SolidColorBrush x:Key="DefaultTextForegroundThemeBrush" Color="#FFFFFF" />
+
+                    <SolidColorBrush x:Key="ThemeMainColor" Color="#2152FF" />
+
+                    <SolidColorBrush x:Key="HotColor" Color="#FF653A" />
+                    <SolidColorBrush x:Key="ColdColor" Color="#052CB2" />
+                    <SolidColorBrush x:Key="CloudColor" Color="#CCCCCC" />
+
+                    <SolidColorBrush x:Key="OpacityBackground" Color="#4F000000" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <ViewModels:ViewModelLocator x:Name="Locator" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

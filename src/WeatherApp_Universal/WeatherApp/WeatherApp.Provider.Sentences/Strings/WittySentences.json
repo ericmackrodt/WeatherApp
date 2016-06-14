@@ -1,0 +1,627 @@
+﻿[
+  { //Partialymine
+    "Phrase": "Couldn't get the [highlight]fucking[/highlight] weather right now",
+    "SubText": "Taking a look outside won't hurt",
+    "Condition": "Unknown",
+    "Color": "#FF0060"
+  },
+  { //Mine
+    "Phrase": "Things are actually getting [highlight]fucking[/highlight] serious",
+    "SubText": "I'd be watching the news if I were you...",
+    "Condition": "Extreme",
+    "Color": "#FF0060"
+  },
+
+  /*Clear*/
+  {// Mine
+    "Phrase": "It's actually [highlight]fucking[/highlight] freezing.",
+    "SubText": "Warm up so you don't become a popsicle.",
+    "Color": "#007EFF",
+    "Condition": "Clear",
+    "Min": -10,
+    "Max": 5
+  },
+  { // Mine
+    "Phrase": "It's [highlight]fucking[/highlight] chilly.",
+    "SubText": "Just feel like getting under the fucking sheets.",
+    "Color": "#007EFF",
+    "Condition": "Clear",
+    "Min": 5,
+    "Max": 15
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] alright today.",
+    "SubText": "Not amazeballs but also not fucking shitty.",
+    "Color": "#007EFF",
+    "Condition": "Clear",
+    "Min": 5,
+    "Max": 15
+  },
+  {
+    "Phrase": "Sun fucking [highlight]glasses.[/highlight]",
+    "SubText": "Time to put on my coolest shades.",
+    "Min": 15,
+    "Max": 25,
+    "Condition": "Clear",
+    "Color": "#FF0000"
+  },
+  { //Subtext, mine
+    "Phrase": "You look [highlight]amazing[/highlight] today.",
+    "SubText": "Not really, but the weather does.",
+    "Min": 15,
+    "Max": 25,
+    "Condition": "Clear",
+    "Color": "#FF0F66"
+  },
+  { //Mine
+    "Phrase": "It feels fucking [highlight]awesome[/highlight] today.",
+    "SubText": "Try not to have TOO much fun.",
+    "Min": 20,
+    "Max": 27,
+    "Condition": "Clear",
+    "Color": "#FF0F66"
+  },
+  { //Changed a bit
+    "Phrase": "[highlight]Love[/highlight] [highlight]is[/highlight] in the fucking air.",
+    "SubText": "Take off your shirt and get wet.",
+    "Min": 25,
+    "Max": 30,
+    "Condition": "Clear",
+    "Color": "#FF0060"
+  },
+  {
+    "Phrase": "Fucking [highlight]Amaze[/highlight] Balls.",
+    "SubText": "So fucking nice outside, holy schmoly.",
+    "Color": "#FF0060",
+    "Condition": "Clear",
+    "Min": 25,
+    "Max": 30
+  },
+
+  /*Rain*/
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] raining.",
+    "SubText": "You can look outside to get more information.",
+    "Condition": "Rain",
+    "Color": "#007EFF"
+  },
+  { //Changed Subtext
+    "Phrase": "Meh... Just stay [highlight]in[/highlight] [highlight]bed.[/highlight]",
+    "SubText": "You can watch some Youtube & play Angrybirds.",
+    "Condition": "Rain",
+    "Color": "#004A96"
+  },
+  { //Sub Mine
+    "Phrase": "It's [highlight]fucking[/highlight] raining.",
+    "SubText": "This weather is boring and wet.",
+    "Condition": "Rain",
+    "Color": "#007EFF"
+  },
+
+  /*HeavyRain*/
+  { //Phrase mine
+    "Phrase": "Raining like [highlight]hell.[/highlight]",
+    "SubText": "You better get an umbrella my friend.",
+    "Condition": "HeavyRain",
+    "Color": "#007EFF"
+  },
+  {
+    "Phrase": "Get your fucking [highlight]umbrella[/highlight].",
+    "SubText": "Shitloads of rain is awaiting you.",
+    "Condition": "HeavyRain",
+    "Color": "#007EFF"
+  },
+  {
+    "Phrase": "[highlight]It[/highlight] [highlight]rains[/highlight] cats and dogs.",
+    "SubText": "You better get an umbrella my friend.",
+    "Condition": "HeavyRain",
+    "Color": "#004A96"
+  },
+
+  /*Drizzle*/
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] Drizzling.",
+    "SubText": "You can look outside to get more information.",
+    "Condition": "Drizzle",
+    "Color": "#007EFF"
+  },
+  { //MIne
+    "Phrase": "Look, [highlight]fucking[/highlight] Drizzle!",
+    "SubText": "This weather is boring and wet.",
+    "Condition": "Drizzle",
+    "Color": "#007EFF"
+  },
+
+  /*Hail*/
+  { //Mine
+    "Phrase": "It rains [highlight]fucking[/highlight] rocks.",
+    "SubText": "Literaly!",
+    "Condition": "Hail",
+    "Color": "#004A96"
+  },
+
+  /*PartlyCloudy*/
+  {
+    "Phrase": "Totally [highlight]not[/highlight] shitty.",
+    "SubText": "Look outside for more information.",
+    "Min": 10,
+    "Max": 20,
+    "Condition": "PartlyCloudy",
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "It’s like a meh… [highlight]kinda[/highlight] day.",
+    "SubText": "But you can change it with a smile :) Or drugs.",
+    "Color": "#FE730F",
+    "Condition": "PartlyCloudy",
+    "Min": 3,
+    "Max": 9
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] alright, I guess.",
+    "SubText": "You can look outside to get more information.",
+    "Condition": "PartlyCloudy",
+    "Color": "#007EFF",
+    "Min": 5,
+    "Max": 20
+  },
+
+
+  /*Overcast*/
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] cloudy.",
+    "SubText": "You can look outside to get more information.",
+    "Condition": "Overcast",
+    "Color": "#007EFF",
+    "Min": 3,
+    "Max": 20
+  },
+  {
+    "Phrase": "Meh... Just stay [highlight]in[/highlight] [highlight]bed.[/highlight]",
+    "SubText": "You can watch some Youtube & play Candy Crush.",
+    "Min": 10,
+    "Max": 20,
+    "Condition": "Overcast",
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "It's just fucking [highlight]grey.[/highlight]",
+    "SubText": "Just clouds & no love, but computer games.",
+    "Color": "#9F9F9F",
+    "Condition": "Overcast",
+    "Min": 5,
+    "Max": 15
+  },
+  /*{
+    "Phrase": "[highlight]Cloudy[/highlight] with a chance of....",
+    "SubText": "You thought I would say meatballs right? Stupid.",
+    "Condition": "Overcast",
+    "Color": "#007EFF"
+  },*/
+  {
+    "Phrase": "Fucking fifty [highlight]shades[/highlight] of grey.",
+    "SubText": "Fucking grey clouds everywhere.",
+    "Condition": "Overcast",
+    "Color": "#9F9F9F"
+  },
+  {
+    "Phrase": "It's getting [highlight]fucking[/highlight] dark.",
+    "SubText": "The storm is coming - May the Force be with you.",
+    "Condition": "Overcast",
+    "Color": "#9F9F9F"
+  },
+
+  /*Snow*/
+  {
+    "Phrase": "Holy [highlight]fucking[/highlight] snow.",
+    "SubText": "Still not ready for building that fucking snow castle.",
+    "Condition": "Snow",
+    "Color": "#007EFF"
+  },
+  {
+    "Phrase": "Are you [highlight]freezing[/highlight] fucking serious?",
+    "SubText": "You can't look outside because of fucking snow.",
+    "Condition": "Snow",
+    "Color": "#007EFF"
+  },
+  {
+    "Phrase": "It's fucking [highlight]skiing[/highlight] time.",
+    "SubText": "Snow every where, yay!",
+    "Condition": "Snow",
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "[highlight]Hello?[/highlight] yes, this is snow-man.",
+    "SubText": "It's time to build me. Look outside fancy pants.",
+    "Condition": "Snow",
+    "Color": "#004A96"
+  },
+  { //Mine
+    "Phrase": "It's time for some fucking [highlight]Yeti[/highlight] hunt.",
+    "SubText": "I'm feeling adventurous with all this snow.",
+    "Condition": "Snow",
+    "Color": "#004A96"
+  },
+
+  /*HeavySnow*/
+  {
+    "Phrase": "Can't see because [highlight]fucking[/highlight] snow.",
+    "SubText": "Try looking outside for more information, try it...",
+    "Condition": "HeavySnow",
+    "Color": "#FFFFFF"
+  },
+
+  /*Sleet*/
+  {
+    "Phrase": "Can't see because [highlight]fucking[/highlight] snow.",
+    "SubText": "Try looking outside for more information, try it...",
+    "Condition": "Sleet",
+    "Color": "#FFFFFF"
+  },
+  {
+    "Phrase": "Meh... Just stay [highlight]in[/highlight] [highlight]bed.[/highlight]",
+    "SubText": "You can browse Tumblr & play Angrybirds.",
+    "Condition": "Sleet",
+    "Color": "#004A96"
+  },
+
+  /*Thunderstorm*/
+  {
+    "Phrase": "Fucking [highlight]thunder[/highlight] storm.",
+    "SubText": "It's time to sing the \"Fuck you Thunder\" song.",
+    "Condition": "Thunderstorm",
+    "Color": "#9F9F9F"
+  },
+  { //Mine
+    "Phrase": "Fucking [highlight]roaring[/highlight] skies.",
+    "SubText": "Talking about the weather, not Pokémon... You nerd!",
+    "Condition": "Thunderstorm",
+    "Color": "#9F9F9F"
+  },
+
+  /*Fog*/
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] foggy.",
+    "SubText": "It's getting cold outside!",
+    "Condition": "Fog",
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Meh... Just stay [highlight]in[/highlight] [highlight]bed.[/highlight]",
+    "SubText": "You can browse Tumblr & play Angrybirds.",
+    "Min": 15,
+    "Max": 20,
+    "Condition": "Fog",
+    "Color": "#004A96"
+  },
+
+  /* Wind */
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] windy.",
+    "SubText": "It's getting cold outside!",
+    "Condition": "Wind",
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Listen, the fucking [highlight]Wind![/highlight]",
+    "SubText": "When you hear it, it means it's getting strong!",
+    "Condition": "Wind",
+    "Color": "#004A96"
+  },
+
+
+  /*No Condition*/
+  {
+    "Phrase": "Hypo [highlight]fucking[/highlight] thermic.",
+    "SubText": "A friend of mine called Tim said that. Smartypants.",
+    "Min": -100,
+    "Max": -3,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Below [highlight]fucking[/highlight] zero.",
+    "SubText": "It's fucking freezing right now, look outside!",
+    "Min": -100,
+    "Max": -1,
+    "Color": "#004A96"
+  },
+  /*{
+    "Phrase": "It's [highlight]frosty[/highlight] as fuck.",
+    "SubText": "This is for you my scotthish friends.",
+    "Min": -100,
+    "Max": 0,
+    "Color": "#004A96"
+  },*/
+  /*{
+    "Phrase": "Prepare [highlight]for[/highlight] [highlight]chest[/highlight] hair.",
+    "SubText": "It's fucking freezing, boys & girls!",
+    "Max": 0,
+    "Color": "#004A96"
+  },*/
+  {
+    "Phrase": "Fucking [highlight]ice[/highlight] [highlight]age.[/highlight]",
+    "SubText": "The movie was great, the weather is not.",
+    "Min": -100,
+    "Max": 0,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] arctic.",
+    "SubText": "Can't feel my fucking fingers any more.",
+    "Min": -100,
+    "Max": 0,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Glacial [highlight]fucking[/highlight] ice.",
+    "SubText": "Can't feel my fucking fingers any more.",
+    "Min": -100,
+    "Max": 0,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Frozen [highlight]fucking[/highlight] fingers.",
+    "SubText": "Can't feel my fingers any more.",
+    "Min": -100,
+    "Max": 0,
+    "Color": "#004A96"
+  },
+  /*{
+    "Phrase": "Frost [highlight]fucking[/highlight] bite.",
+    "SubText": "Can't feel my fingers any more.",
+    "Max": 0,
+    "Color": "#004A96"
+  },*/
+  { //SubText mine
+    "Phrase": "As cold as a [highlight]fucking[/highlight] penguin.",
+    "SubText": "I guess they wouldn't car, but I do.",
+    "Min": -100,
+    "Max": 0,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "North [highlight]fucking[/highlight] pole.",
+    "SubText": "Nothing against the north pole, but seriously!",
+    "Min": -100,
+    "Max": 0,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "It's [highlight]ducking[/highlight] freezing.",
+    "SubText": "Oh damnit you fucking autocorrect.",
+    "Min": -100,
+    "Max": 3,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Numb [highlight]fucking[/highlight] fingers.",
+    "SubText": "Can't feel my fucking fingers any more.",
+    "Min": -100,
+    "Max": 3,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Cold as [highlight]fucking[/highlight] shit.",
+    "SubText": "You heard it, unpack your space heater!",
+    "Min": -100,
+    "Max": 4,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Freezing cold like a fucking [hightlight]fridge.[/hightlight]",
+    "SubText": "You can look outside to get more information.",
+    "Min": -100,
+    "Max": 4,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Grow a fucking [highlight]beard.[/highlight]",
+    "SubText": "It's freezing outside, you will need it.",
+    "Min": -100,
+    "Max": 4,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Icebergs all over [highlight]your[/highlight] [highlight]shit.[/highlight]",
+    "SubText": "Time to get cozy and watch Titanic again!",
+    "Min": 0,
+    "Max": 5,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "It's fucking [highlight]whiskey[/highlight] time.",
+    "SubText": "This will warm you up. It's freezing!",
+    "Min": 0,
+    "Max": 5,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Cold ass [highlight]monkey[/highlight] pants.",
+    "SubText": "Yeah, exactly.",
+    "Min": 0,
+    "Max": 5,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Frozen [highlight]fucking[/highlight] weather.",
+    "SubText": "It's fucking freezing right now, look outside.",
+    "Min": 0,
+    "Max": 5,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Am I allowed to say [highlight]nipples?[/highlight]",
+    "SubText": "Because it's freezing! You get the point.",
+    "Min": 0,
+    "Max": 5,
+    "Color": "#004A96"
+  },
+  /*{
+    "Phrase": "It's a wee bit [highlight]nippy![/highlight]",
+    "SubText": "This is for you my scotthish friends.",
+    "Min": -3,
+    "Max": 6,
+    "Color": "#004A96"
+  },*/
+  {
+    "Phrase": "Hey girl are you [highlight]cold?[/highlight]",
+    "SubText": "That's because it's freezing outside. Go & look.",
+    "Min": 0,
+    "Max": 8,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "Brezzy [highlight]fucking[/highlight] breezy.",
+    "SubText": "It's getting cold outside!",
+    "Min": 3,
+    "Max": 10,
+    "Color": "#004A96"
+  },
+  { //Mine
+    "Phrase": "It's getting [highlight]fucking[/highlight] cold.",
+    "SubText": "You should've heard your mom about that coat!",
+    "Min": 5,
+    "Max": 10,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "It's getting [highlight]fucking[/highlight] chilly.",
+    "SubText": "You heard it, unpack your space heater!",
+    "Min": 5,
+    "Max": 10,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] okay.",
+    "SubText": "Look outside for more information.",
+    "Min": 9,
+    "Max": 20,
+    "Color": "#004A96"
+  },
+  {
+    "Phrase": "You look [highlight]amazing[/highlight] today.",
+    "SubText": "And so is the weather. You just need to believe it.",
+    "Min": 10,
+    "Max": 20,
+    "Color": "#FF0F66"
+  },
+  {
+    "Phrase": "Fucking brain [highlight]freeze.[/highlight]",
+    "SubText": "Fuck Yeah Ice Cream!",
+    "Min": 20,
+    "Max": 30,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "Let's get fucking [highlight]fried.[/highlight]",
+    "SubText": "Take off your shirt but keep oh the panties.",
+    "Min": 20,
+    "Max": 30,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "I'm on a [highlight]fucking[/highlight] boat.",
+    "SubText": "It's hot! Take off your shirt, keep on your pants.",
+    "Min": 20,
+    "Max": 30,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] nice.",
+    "SubText": "Take off your shirt but keep on your panties.",
+    "Min": 20,
+    "Max": 30,
+    "Color": "#FF0060"
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] car wash time.",
+    "SubText": "Exactly! It's going to be hot as shit.",
+    "Min": 24,
+    "Max": 34,
+    "Color": "#FF0F66"
+  },
+  {
+    "Phrase": "Let's get [highlight]fucking[/highlight] naked.",
+    "SubText": "You heard it, it's going to be hot!",
+    "Min": 24,
+    "Max": 34,
+    "Color": "#FF0F66"
+  },
+  {
+    "Phrase": "It's fucking [highlight]BBQ[/highlight] time.",
+    "SubText": "Vegetarians and Meat fans unite! BBQ is for all of us.",
+    "Min": 24,
+    "Max": 34,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "I think [highlight]you[/highlight] [highlight]are[/highlight] fucking hot.",
+    "SubText": "Just kidding, but the fucking weather is.",
+    "Min": 25,
+    "Max": 30,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] hot.",
+    "SubText": "Even fucking Cortana has no answer for you today.",
+    "Min": 25,
+    "Max": 30,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "I'm [highlight]fucking[/highlight] melting.",
+    "SubText": "Take off your shirt and get wet.",
+    "Min": 27,
+    "Max": 35,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "It's [highlight]fucking[/highlight] tropical.",
+    "SubText": "Ice Cream is my final answer.",
+    "Min": 30,
+    "Max": 40,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "Global [highlight]fucking[/highlight] warming.",
+    "SubText": "Yeah, let's blame Global Warming.",
+    "Min": 30,
+    "Max": 40,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "It's so [highlight]fucking[/highlight] hot.",
+    "SubText": "I wouldn't go outside for more information.",
+    "Min": 30,
+    "Max": 40,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "It's too [highlight]damn[/highlight] hot.",
+    "SubText": "Ice Cream is my final answer.",
+    "Min": 33,
+    "Max": 40,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "So hot makin' me [highlight]stoopid.[/highlight]",
+    "SubText": "I heard that Ryan Gosling said this.",
+    "Min": 34,
+    "Max": 40,
+    "Color": "#FF0000"
+  },
+  { //MySub
+    "Phrase": "Drop it like it's [highlight]hot[/highlight].",
+    "SubText": "*Don't drop your fucking Windows Phone though, seriously.",
+    "Min": 35,
+    "Max": 100,
+    "Color": "#FF0000"
+  },
+  {
+    "Phrase": "It's like a fucking [highlight]oven.[/highlight]",
+    "SubText": "Just get naked, now - And get some ice cream.",
+    "Min": 35,
+    "Max": 100,
+    "Color": "#FFC600"
+  }
+]

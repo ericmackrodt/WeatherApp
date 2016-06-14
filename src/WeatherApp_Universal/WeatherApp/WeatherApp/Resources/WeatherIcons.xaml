@@ -1,0 +1,938 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherApp.Resources">
+
+    <Style x:Key="WeatherIconBase" TargetType="FontIcon">
+        <Setter Property="FontFamily" Value="../Assets/WeatherFont/weathericons-regular-webfont.ttf#Weather Icons" />
+    </Style>
+
+    <Style x:Key="WeatherIcon_day-sunny" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-cloudy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf002;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-cloudy-gusts" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf000;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-cloudy-windy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf001;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-fog" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf003;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-hail" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf004;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-haze" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b6;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-lightning" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf005;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-rain" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf008;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-rain-mix" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf006;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-rain-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf007;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf009;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-sleet" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b2;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-sleet-storm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf068;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-snow" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-snow-thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf06b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-snow-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf065;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-sprinkle" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-storm-showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-sunny-overcast" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf010;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-windy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf085;" />
+    </Style>
+    <Style x:Key="WeatherIcon_solar-eclipse" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf06e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_hot" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf072;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-cloudy-high" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf07d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_day-light-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c4;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-clear" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-cloudy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf086;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-cloudy-gusts" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf022;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-cloudy-windy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf023;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-hail" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf024;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-lightning" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf025;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-rain" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf028;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-rain-mix" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf026;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-rain-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf027;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf029;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-sleet" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b4;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-sleet-storm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf06a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-snow" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-snow-thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf06d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-snow-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf067;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-sprinkle" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-storm-showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-cloudy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf031;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-cloudy-gusts" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02f;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-cloudy-windy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf030;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-fog" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf04a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-hail" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf032;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-lightning" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf033;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-partly-cloudy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf083;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-rain" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf036;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-rain-mix" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf034;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-rain-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf035;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf037;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-sleet" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b3;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-sleet-storm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf069;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-snow" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf038;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-snow-thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf06c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-snow-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf066;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-sprinkle" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf039;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-storm-showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf03a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf03b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_lunar-eclipse" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf070;" />
+    </Style>
+    <Style x:Key="WeatherIcon_stars" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf077;" />
+    </Style>
+    <Style x:Key="WeatherIcon_storm-showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-cloudy-high" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf07e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-cloudy-high" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf080;" />
+    </Style>
+    <Style x:Key="WeatherIcon_night-alt-partly-cloudy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf081;" />
+    </Style>
+    <Style x:Key="WeatherIcon_cloud" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf041;" />
+    </Style>
+    <Style x:Key="WeatherIcon_cloudy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf013;" />
+    </Style>
+    <Style x:Key="WeatherIcon_cloudy-gusts" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf011;" />
+    </Style>
+    <Style x:Key="WeatherIcon_cloudy-windy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf012;" />
+    </Style>
+    <Style x:Key="WeatherIcon_fog" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf014;" />
+    </Style>
+    <Style x:Key="WeatherIcon_hail" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf015;" />
+    </Style>
+    <Style x:Key="WeatherIcon_rain" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf019;" />
+    </Style>
+    <Style x:Key="WeatherIcon_rain-mix" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf017;" />
+    </Style>
+    <Style x:Key="WeatherIcon_rain-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf018;" />
+    </Style>
+    <Style x:Key="WeatherIcon_showers" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_sleet" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b5;" />
+    </Style>
+    <Style x:Key="WeatherIcon_snow" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_sprinkle" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_snow-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf064;" />
+    </Style>
+    <Style x:Key="WeatherIcon_smog" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf074;" />
+    </Style>
+    <Style x:Key="WeatherIcon_smoke" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf062;" />
+    </Style>
+    <Style x:Key="WeatherIcon_lightning" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf016;" />
+    </Style>
+    <Style x:Key="WeatherIcon_raindrops" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf04e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_raindrop" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf078;" />
+    </Style>
+    <Style x:Key="WeatherIcon_dust" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf063;" />
+    </Style>
+    <Style x:Key="WeatherIcon_snowflake-cold" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf076;" />
+    </Style>
+    <Style x:Key="WeatherIcon_windy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf021;" />
+    </Style>
+    <Style x:Key="WeatherIcon_strong-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf050;" />
+    </Style>
+    <Style x:Key="WeatherIcon_sandstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf082;" />
+    </Style>
+    <Style x:Key="WeatherIcon_earthquake" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c6;" />
+    </Style>
+    <Style x:Key="WeatherIcon_fire" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c7;" />
+    </Style>
+    <Style x:Key="WeatherIcon_flood" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf07c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_meteor" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf071;" />
+    </Style>
+    <Style x:Key="WeatherIcon_tsunami" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c5;" />
+    </Style>
+    <Style x:Key="WeatherIcon_volcano" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c8;" />
+    </Style>
+    <Style x:Key="WeatherIcon_hurricane" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf073;" />
+    </Style>
+    <Style x:Key="WeatherIcon_tornado" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf056;" />
+    </Style>
+    <Style x:Key="WeatherIcon_small-craft-advisory" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0cc;" />
+    </Style>
+    <Style x:Key="WeatherIcon_gale-warning" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0cd;" />
+    </Style>
+    <Style x:Key="WeatherIcon_storm-warning" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ce;" />
+    </Style>
+    <Style x:Key="WeatherIcon_hurricane-warning" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0cf;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-direction" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b1;" />
+    </Style>
+    <Style x:Key="WeatherIcon_alien" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf075;" />
+    </Style>
+    <Style x:Key="WeatherIcon_celsius" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf03c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_fahrenheit" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf045;" />
+    </Style>
+    <Style x:Key="WeatherIcon_degrees" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf042;" />
+    </Style>
+    <Style x:Key="WeatherIcon_thermometer" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf055;" />
+    </Style>
+    <Style x:Key="WeatherIcon_thermometer-exterior" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf053;" />
+    </Style>
+    <Style x:Key="WeatherIcon_thermometer-internal" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf054;" />
+    </Style>
+    <Style x:Key="WeatherIcon_cloud-down" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf03d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_cloud-up" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf040;" />
+    </Style>
+    <Style x:Key="WeatherIcon_cloud-refresh" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf03e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_horizon" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf047;" />
+    </Style>
+    <Style x:Key="WeatherIcon_horizon-alt" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf046;" />
+    </Style>
+    <Style x:Key="WeatherIcon_sunrise" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf051;" />
+    </Style>
+    <Style x:Key="WeatherIcon_sunset" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf052;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moonrise" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c9;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moonset" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ca;" />
+    </Style>
+    <Style x:Key="WeatherIcon_refresh" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf04c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_refresh-alt" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf04b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_umbrella" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf084;" />
+    </Style>
+    <Style x:Key="WeatherIcon_barometer" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf079;" />
+    </Style>
+    <Style x:Key="WeatherIcon_humidity" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf07a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_na" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf07b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_train" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0cb;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-new" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf095;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-crescent-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf096;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-crescent-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf097;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-crescent-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf098;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-crescent-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf099;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-crescent-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-crescent-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-first-quarter" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-gibbous-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-gibbous-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-gibbous-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09f;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-gibbous-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a0;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-gibbous-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a1;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waxing-gibbous-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a2;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-full" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a3;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-gibbous-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a4;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-gibbous-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a5;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-gibbous-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a6;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-gibbous-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a7;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-gibbous-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a8;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-gibbous-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a9;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-third-quarter" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0aa;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-crescent-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ab;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-crescent-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ac;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-crescent-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ad;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-crescent-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ae;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-crescent-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0af;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-waning-crescent-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b0;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-new" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0eb;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-crescent-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d0;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-crescent-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d1;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-crescent-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d2;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-crescent-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d3;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-crescent-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d4;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-crescent-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d5;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-first-quarter" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d6;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-gibbous-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d7;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-gibbous-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d8;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-gibbous-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0d9;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-gibbous-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0da;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-gibbous-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0db;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waxing-gibbous-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0dc;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-full" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0dd;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-gibbous-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0de;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-gibbous-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0df;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-gibbous-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e0;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-gibbous-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e1;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-gibbous-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e2;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-gibbous-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e3;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-third-quarter" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e4;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-crescent-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e5;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-crescent-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e6;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-crescent-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e7;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-crescent-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e8;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-crescent-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0e9;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-alt-waning-crescent-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ea;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-0" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf095;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf096;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf097;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf098;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf099;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-7" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-8" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-9" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-10" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf09f;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-11" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a0;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-12" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a1;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-13" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a2;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-14" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a3;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-15" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a4;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-16" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a5;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-17" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a6;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-18" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a7;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-19" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a8;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-20" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0a9;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-21" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0aa;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-22" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ab;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-23" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ac;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-24" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ad;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-25" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ae;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-26" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0af;" />
+    </Style>
+    <Style x:Key="WeatherIcon_moon-27" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b0;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf08a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf08b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf08c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf08d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf08e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf08f;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-7" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf090;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-8" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf091;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-9" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf092;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-10" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf093;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-11" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf094;" />
+    </Style>
+    <Style x:Key="WeatherIcon_time-12" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf089;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-up" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf058;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-up-right" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf057;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-right" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf04d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-down-right" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf088;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-down" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf044;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-down-left" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf043;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-left" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf048;" />
+    </Style>
+    <Style x:Key="WeatherIcon_direction-up-left" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf087;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-0" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b7;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b8;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b9;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0ba;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0bb;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0bc;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0bd;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-7" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0be;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-8" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0bf;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-9" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c0;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-10" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c1;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-11" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c2;" />
+    </Style>
+    <Style x:Key="WeatherIcon_wind-beaufort-12" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c3;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-0" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf056;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-1" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-2" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf073;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-3" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-4" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-5" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf017;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-6" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf017;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-7" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf017;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-8" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf015;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-9" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-10" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf015;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-11" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-12" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-13" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-14" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-15" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf064;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-16" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-17" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf015;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-18" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf017;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-19" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf063;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-20" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf014;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-21" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf021;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-22" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf062;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-23" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf050;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-24" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf050;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-25" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf076;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-26" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf013;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-27" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf031;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-28" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf002;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-29" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf031;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-30" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf002;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-31" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-32" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-33" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf083;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-34" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-35" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf017;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-36" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf072;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-37" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-38" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-39" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-40" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01a;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-41" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf064;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-42" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-43" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf064;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-44" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00c;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-45" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-46" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-47" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_yahoo-3200" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf077;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-clear-day" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00d;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-clear-night" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf02e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-rain" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf019;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-snow" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01b;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-sleet" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0b5;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-wind" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf050;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-fog" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf014;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-cloudy" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf013;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-partly-cloudy-day" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf002;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-partly-cloudy-night" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf031;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-hail" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf015;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-thunderstorm" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf01e;" />
+    </Style>
+    <Style x:Key="WeatherIcon_forecast-io-tornado" BasedOn="{StaticResource WeatherIconBase}" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf056;" />
+    </Style>
+</ResourceDictionary>
+
